@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ProductDAO">
+	<insert id="insertProduct" parameterType="product">
+		insert into
+		product(pnum,pinum,ptype1,ptype2,ptype3,ptype4,ptype5,ptype6,ptype7,pname,pcompa,pcontent,pimg1,pimg2,psavimg,useitem)
+		values(PRODUCT_SEQ.nextval, PRICE_SEQ.nextval, #{ptype1}, #{ptype2},
+		#{ptype3}, #{ptype4}, #{ptype5}, #{ptype6},
+		#{ptype7}, #{pname}, #{pcompa},
+		#{pcontent}, #{pimg1},#{pimg2},#{psavimg},#{useitem})
+	</insert>
+
+	<select id="selectProductList" resultType="product">
+		select pnum, pname,
+		pcontent
+		from product where useitem='Y'
+		order by preg desc
+	</select>
+	<!-- 검색조건+페이징 목록가져오기 -->
+	<select id="selectProductListPaging"
+		resultType="com.ezen.biz.dto.ProductVO">
+		select * from (
+		select rownum rn, A.* from
+		(select
+		pnum,pname,pcompa,pcontent,preg from product where 1=1
+		<if test="searchtype=='pname'">
+			and pname like '%' || #{searchword} ||'%'
+		</if>
+		<if test="searchtype=='pcompa'">
+			and pcompa like '%' || #{searchword} ||'%'
+		</if>
+		<if test="searchtype=='pcontent'">
+			and pcontent like '%' || #{searchword} ||'%'
+		</if>
+		and useitem='Y' order by pnum desc) A
+		<![CDATA[
+			where rownum<=#{pageNum}*#{rowsPerPage}
+			) where rn>=#{pageNum}*#{rowsPerPage}-#{rowsPerPage}+1
+		]]>
+
+	</select>
+	<!-- 제품의 전체개수 가져오기 -->
+	<select id="selectRowCount" resultType="java.lang.Integer">
+		select count(*) from product where useitem='Y'
+	</select>
+	<!-- 검색조건에 해당하는 개수 가져오기 -->
+	<select id="selectRowCountPaging" resultType="java.lang.Integer">
+		select count(*) from product where 1=1
+		<if test="searchtype=='pname'">
+			and pname like '%' || #{searchword} ||'%'
+		</if>
+		<if test="searchtype=='pcompa'">
+			and pcompa like '%' || #{searchword} ||'%'
+		</if>
+		<if test="searchtype=='pcontent'">
+			and pcontent like '%' || #{searchword} ||'%'
+		</if>
+		and useitem='Y'
+	</select>
+
+	<select id="selectProduct" resultType="product">
+		select * from product
+		where
+		pnum=#{pnum} and useitem='Y'
+	</select>
+
+	<update id="updateProduct" parameterType="product">
+		update product set pname=#{pname},pcompa=#{pcompa}, ptype1=#{ptype1},
+		ptype2=#{ptype2}, ptype3=#{ptype3},
+		ptype4=#{ptype4}, ptype5=#{ptype5}, ptype6=#{ptype6}, ptype7=#{ptype7},
+		pcontent=#{pcontent}, pimg1=#{pimg1}, pimg2=#{pimg2} ,
+		psavimg=#{psavimg}
+		where pnum=#{pnum}
+	</update>
+	
+	<update id="deleteProduct" parameterType="java.lang.Long">
+		update product set useitem='N' where pnum=#{pnum}
+	</update>
+</mapper>

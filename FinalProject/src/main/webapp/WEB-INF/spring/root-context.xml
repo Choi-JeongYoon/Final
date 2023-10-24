@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	<!-- DAO,Impl 등..객체 생성 -->
+	<context:component-scan base-package="com.ezen.biz"/>
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		<!-- 패스워드 암호화 클래스 bean등록 -->
+	<bean id="passwordEncoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+	
+		<!-- 외부설정 파일을 정의 -->
+	<context:property-placeholder location="classpath:oraDB.properties" />
+	<!-- hikaricp 사용 bean등록 -->
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+		<property name="driverClassName" value="${ora.driver}"></property>
+		<property name="jdbcUrl" 		 value="${ora.url}"></property>
+		<property name="username" 		 value="${ora.user}"></property>
+		<property name="password" 		 value="${ora.pwd}"></property>
+	</bean>
+		<!-- HikariCP configuration -->
+	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" 
+		destroy-method="close">
+		<constructor-arg ref="hikariConfig"/>
+		<property name="idleTimeout" value="300"/>
+		<property name="maxLifetime" value="300"/>
+	</bean>
+		<!-- Mybatis(SqlSession) 관련된 객체 생성 sqlsessionfactorybean -->
+		
+	<bean id="sqlSessionFactoryBean"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="configLocation"
+			value="classpath:sql-map-config.xml"></property>
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<!--Mybatis 를 이용해서 편리하게 CRUD작업을 할 수 있는 Template 사용 bean등록 -->
+	<bean id="sqlSessionTemplate"
+		class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactoryBean"></constructor-arg>
+	</bean>
+	
+	<!-- AOP 관련 정의 -->
+	<!-- AOP 관련 Annotation scan 위한 설정 namespace tx(트랜잭션),aop -->
+	<aop:aspectj-autoproxy />
+	<!-- 트렌젝션 관련 advice 는 스프링이 제공해 주는 것을 사용 설정 :ㅣtx태그사요->tx 네임스페이스를 추가 TransactionManager 
+		객체생성 -->
+	<bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<!-- 어드바이스 정의 -->
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="*" />
+			<tx:method name="select*" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+	<!-- tx관련 AOP설정 -->
+	<aop:config>
+		<aop:pointcut id="txPointcut"
+			expression="execution(* com.ezen.biz..*Impl.*(..))" />
+		<aop:advisor advice-ref="txAdvice"
+			pointcut-ref="txPointcut" />
+	</aop:config>
+</beans>

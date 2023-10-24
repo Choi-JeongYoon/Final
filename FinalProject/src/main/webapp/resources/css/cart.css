@@ -1,0 +1,154 @@
+﻿/* 메인 콘텐트 : 헤더와 푸터를 제외한 전체 */
+section#main {
+    width:990px;
+    margin:0 auto;
+}
+/* 왼쪽 콘텐츠 */
+aside#left {
+    width:215px;
+    float:left;
+    margin-top:15px;
+    font-weight:bold;
+}
+aside#left #cat_title {
+    padding:12px;
+    background-color:#96c11f;
+    color:#ffffff;
+    text-align:center;
+}
+aside#left li {
+    color:#666666;
+    padding:7px 0 7px 30px;
+    border-left:solid 1px #cccccc;
+    border-right:solid 1px #cccccc;
+    border-bottom:solid 1px #cccccc;
+}
+aside#left #customer {
+    width:213px;
+    height:100px;
+    margin-top:20px;
+    border:solid 1px #cccccc;
+    background-color:#ffffff;	
+}
+aside#left #customer img {
+    margin:5px 0 0 5px;
+}
+/* 우측 콘텐츠 */
+section#right {
+    width:750px;
+    float:right;
+    margin-top:20px;
+}
+/* 장바구니 */
+section#right h2#cart_title {
+    padding:0 0 5px 0;
+    border-bottom:solid 1px #000000;
+}
+section#right h2#cart_title span {
+    color:#688912;	
+}
+section#right #process {
+    margin:15px 0 0 10px;
+}
+section#right table {
+    width:100%;
+    margin:10px 0 0 0;
+    border-collapse:collapse;
+    border-top:solid 2px #688912;
+    border-left:solid 2px #cccccc;
+    border-right:solid 2px #cccccc;	
+    border-bottom:solid 2px #cccccc;		
+}
+section#right tr.title {
+    height:50px;
+    background-color:#e9e8e9;
+}
+section#right th {
+    padding:10px;
+    border-bottom:solid 2px #cccccc;		
+}
+section#right tr.items {
+    height:80px;
+    border-bottom:solid 2px #cccccc;
+}
+section#right tr.items td {
+    padding:5px;
+    border-bottom:solid 2px #cccccc;
+}
+section#right tr.items .col1 {
+    width:50px;
+    text-align:center;
+}
+section#right tr.items .col2 {
+
+}
+section#right tr.items .col3 {
+    width:60px;
+    text-align:center;
+}
+section#right tr.items .col4 {
+    width:80px;
+    text-align:center;
+}
+section#right tr.items .col5 {
+    width:80px;
+    text-align:center;
+}
+section#right tr.items .col5 {
+    width:80px;
+    text-align:center;
+}
+section#right tr.items .col7 {
+    width:80px;
+    text-align:center;
+}
+section#right tr.total_price {
+    height:25px;
+}
+section#right tr.total_price td {
+    text-align:right;	
+    padding:10px;
+}
+section#right tr.order_status_box {
+    height:100px;
+    background-color:#e9e8e9;
+    border-top:solid 2px #cccccc;	
+}
+section#right .order_status_box td {
+    vertical-align:top;
+}
+section#right .order_status {
+    position:relative;
+}
+section#right .order_status p {
+    position:absolute;
+    top:40px;
+    left:20px;
+}
+section#right .order_status div {
+    position:absolute;
+    top:20px;
+    left:480px;
+}
+section#right .order_status li {
+    display:inline-block;
+    margin:2px 0;
+}
+section#right .order_status .col1 {
+    width:150px;
+    text-align:right;
+}
+section#right .order_status .col2 {
+    width:80px;
+    text-align:right;	
+}
+section#right table span {
+    font-weight:bold;
+}
+section#right #order_buttons {
+    margin:20px 0 0 0;
+    text-align:center;
+}
+section#right #order_buttons li {
+    display:inline;
+}

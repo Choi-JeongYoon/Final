@@ -1,0 +1,111 @@
+﻿/* 메인 콘텐츠 */
+section#main {
+    width:990px;
+    margin:auto;
+}
+/* 좌측 카테고리 + 메인 이미지 + 공지사항/주간 이벤트 */
+section#cat1 {
+    width:215px;
+    float:left;
+    margin-top:15px;
+    font-weight:bold;
+}
+section#cat1 #cat_title {
+    padding:12px;
+    background-color:#96c11f;
+    color:#ffffff;
+    text-align:center;
+}
+section#cat1 li {
+    color:#666666;
+    padding:7px 0 7px 30px;
+    border-bottom:solid 1px #cccccc;
+}
+section#cat2 {
+    float:left;
+    margin-top:15px;
+}
+section#cat3 {
+    width:236px;
+    float:left;
+    margin-top:15px;
+}
+section#cat3 #latest_notice {
+    width:239px;
+    height:365px;
+    background-image:url("../img/latest_notice.gif");
+    background-repeat:no-repeat;
+}
+section#cat3 #latest_notice ul {
+    padding:42px 0 0 30px;
+    list-style-image:url("../img/blue_dot.gif");
+}
+section#cat3 #week_event {
+    width:239px;
+    height:191px;
+    margin-top:11px;
+    background-image:url("../img/week_event.gif");
+    background-repeat:no-repeat;
+}
+section#cat3 #week_event img {
+    margin:58px 0 0 22px;
+}
+/* 스페셜 숍 (special shop) */
+section#special_shop {
+    width:990px;
+    height:389px;
+    margin-top:20px;
+    float:left;
+    background-image:url("../img/special_shop.gif");
+    background-repeat:no-repeat;
+}
+section#special_shop ul {
+    margin:60px 0 0 25px;
+}
+section#special_shop li {
+    display:inline;
+    margin:0 20px;
+}
+section#special_shop img {
+    padding:25px;
+    border: solid 1px #cccccc;
+}
+section#special_banner {
+    float:left;
+    margin:19px 0 0 5px;
+}
+section#special_banner div {
+    width:392px;
+    height:129px;
+    margin-top:1px;
+}
+
+/* 신규 상품 */
+section#new {
+    height:650px;
+    margin-top:20px;
+    border-top:solid 2px #9bc32a;
+}
+section#new h3 {
+    margin:20px 0 0 35px;
+}
+section#new h3 span{
+    color:#80a727;
+}
+section#new .item{
+    float:left;
+    text-align:center;
+    margin:20px 0 0 32px;
+}
+section#new .item .subject{
+    margin-top:10px;
+    color:#80a727;
+}
+section#new .item .comment{
+    margin-top:5px;
+    color:#888888;
+}
+section#new .item .price{
+    margin-top:5px;
+    font-weight:bold;
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberDAO">
+	
+	<insert id="insertMember">
+		insert into
+		member(id,pwd,email,nickname,role)
+		values(#{id},#{pwd},#{email,jdbcType=VARCHAR},#{nickname},#{role})
+	</insert>
+	<select id="selectMember" resultType="com.ezen.biz.dto.MemberVO">
+		select * from member 
+		where id=#{id}	
+		and used='1'
+	</select>
+	<!-- 모든회원조회 -->
+	<select id="selectMemberList" resultType="com.ezen.biz.dto.MemberVO">
+		select * from member where used='1'
+	</select>
+</mapper>
