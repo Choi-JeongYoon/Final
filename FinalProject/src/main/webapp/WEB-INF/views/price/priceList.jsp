@@ -15,29 +15,37 @@
 </style>
 <main>
 	<h2>가격 목록</h2>
-	<div id="top-button">
+<div id="top-button">
 		<c:if test="${sessionScope.role=='ADMIN'}">
 			<a href="priceNew"><button type="button" class="btn btn-primary">가격등록</button></a>
+			
 		</c:if>
 	</div>
+		      <!--  검색 -->
+    <div id="searchdiv">	 	
+		<form action="productList" method="post">
+	        <select name="searchtype" id="searchtype">
+	            <option value="pname" checked>가격번호</option>
+	            <option value="pcompa">가격</option>
+	            <option value="pcontent">판매회사</option>
+	        </select>
+	        <input type="text" size="20" name="searchword" id="searchword" >
+	        <button onclick="return searchFun()">검 색</button> &nbsp;	        
+	    </form>		
+
+ 	</div>		
+ 	
 	<table class="table table-sm table-bordered">
 		<tr>
 			<th>가격번호</th>
-			<th>물품번호</th>
-			<th>제조회사</th>
 			<th>가격</th>
-			<th>판매페이지</th>
-			<th>저장일자</th>
+			<th>판매회사</th>
 		</tr>
-		<c:forEach items="${list}" var="price" varStatus="sts">
+		<c:forEach items="${list1}" var="price" varStatus="sts">
 			<tr>
-				<td>${sts.count}</td>
-				<td><a href="priceView?pinum=${price.pinum}&pageNum=${pmaker.criteria.pageNum}&searchword=${pmaker.criteria.searchword}&searchtype=${pmaker.criteria.searchtype}">${price.pinum}</a></td>
-				<td><a href="priceView?pnum=${price.pnum}&pageNum=${pmaker.criteria.pageNum}&searchword=${pmaker.criteria.searchword}&searchtype=${pmaker.criteria.searchtype}">${price.pnum}</a></td>
-				<td>${price.picompa}</td>
+			<td><a href="priceView?pinum=${price.pnum}&pageNum=${pmaker.criteria.pageNum}&searchword=${pmaker.criteria.searchword}&searchtype=${pmaker.criteria.searchtype}">${price.pinum}</a></td>
 				<td>${price.price}</td>
-				<td>${price.pipage}</td>
-				<td>${price.regdate}</td>
+				<td>${price.picompa}</td>
 			</tr>	
 		</c:forEach>
 	 </table>

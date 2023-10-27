@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <hr class="my-4">
-
+ <a class="btn btn-primary btn-lg" href="productList" role="button">다~나옵니다</a>
 <!-- 왼쪽 카테고리 부분 -->
 <div class="category" id="category">
 

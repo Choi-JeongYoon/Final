@@ -154,8 +154,8 @@ function uploadFileCheck() {
 	//파일 요소 가져오기
 	let f=document.getElementById("uploadFile");
 	//console.log(f.files[0].size);
-	if(f.files[0].size>10485760){
-		alert("파일의 크기는 10M 이하 입니다.");
+	if(f.files[0].size>20971520){
+		alert("파일의 크기는 20M 이하 입니다.");
 		document.getElementById("uploadFile").value="";//선택된파일 지우기
 		return;
 	}

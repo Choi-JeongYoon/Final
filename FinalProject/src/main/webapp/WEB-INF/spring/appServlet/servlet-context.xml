@@ -23,7 +23,7 @@
 	<!-- common upload 라이브러리 사용 MutipartResolver 빈 등록 -->
 	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<beans:property name="defaultEncoding" value="UTF-8"/>
-		<beans:property name="maxUploadSize" value="10485760"/>
+		<beans:property name="maxUploadSize" value="20971520"/>
 	</beans:bean>
 	
 	<context:component-scan base-package="com.ezen.controller" />

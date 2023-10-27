@@ -26,11 +26,11 @@ td {
 		<table class="table table-sm table-bordered">
 
 			<tr>
-				<th>제조회사명</th>
+				<th>판매페이지입력</th>
 				<td class="disp">${price.picompa}</td>
 				<td class="edit" style="display: none;"><input type="text"
 					size="120" maxlength="30" name="picompa" id="picompa"
-					value="${price.picompa}" placeholder="제조회사명입력"></td>
+					value="${price.picompa}" placeholder="판매페이지입력"></td>
 			</tr>
 			<tr>
 				<th>가격입력</th>

@@ -12,10 +12,12 @@
  <typeAliases>
  	<typeAlias type="com.ezen.biz.dto.ProductVO" alias="product"/> 
  	<typeAlias type="com.ezen.biz.dto.MemberVO" alias="member"/>
+ 	<typeAlias type="com.ezen.biz.dto.PriceVO" alias="price"/>
  	<typeAlias type="com.ezen.biz.utils.Criteria" alias="criteria" />
  </typeAliases>
   <mappers>
     <mapper resource="mappings/product-mapping.xml"/>
     <mapper resource="mappings/member-mapping.xml"/>
+    <mapper resource="mappings/price-mapping.xml"/>
   </mappers>
 </configuration>

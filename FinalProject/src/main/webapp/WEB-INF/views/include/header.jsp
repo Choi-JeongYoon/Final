@@ -198,9 +198,19 @@
 			</a>
 		</div>
 		<div class="item">
-			<a href="login" role="button" class="btn_user btn_user--login"> <span
-				class="txt">로그인</span>
-			</a>
+			<c:choose>
+			<c:when test="${sessionScope.name==null}">
+				<button type="button" id="login" name="login"
+					onclick="location.href='login'" class="btn btn-success">로그인</button>
+				<button type="button" id="register" name="register"
+					onclick="location.href='register'" class="btn btn-warning">회원가입</button>
+			</c:when>
+			<c:otherwise>
+			${sessionScope.name}님 
+			<button type="button" id="logout" name="logout"
+					onclick="location.href='home'" class="btn btn-success">로그아웃</button>
+			</c:otherwise>
+		</c:choose>
 			<div class="layer__user-more" style="display: none;">
 				<ul class="more-list">
 					<li class="item_more"><a

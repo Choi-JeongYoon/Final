@@ -77,7 +77,8 @@
             <p class="err_txt" id="danawa-member-login-error-message"></p>
         </div>
         <button type="submit" class="btn_login" id="login" >로그인</button>
-        <a href="register"><button type="button" class="btn_login" >회원 가입</button></a> 
+        <a href="register">
+        <button type="button" class="btn_login" >회원 가입</button></a> 
 
 			
 			  <div class="sns_area content__sns" id="danawa-member-login-loginSnsArea">

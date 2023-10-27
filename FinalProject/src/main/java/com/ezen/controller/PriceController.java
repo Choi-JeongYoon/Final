@@ -26,12 +26,12 @@ import com.ezen.biz.utils.Criteria;
 @SessionAttributes("price")
 public class PriceController {
 	@Autowired
-	private PriceService service;
+	private PriceService PriceService;
 
 	@RequestMapping(value="priceList")
 	public String selectPriceList(Model model,Criteria cri) {
-		List<PriceVO> list=service.selectPriceList();
-		model.addAttribute("list", list);
+		List<PriceVO> list1=PriceService.selectPriceList();
+		model.addAttribute("list1", list1);
 		return "price/priceList";
 	}
 	
@@ -40,7 +40,7 @@ public class PriceController {
 	@GetMapping("priceView")
 	public String priceView(Model model,Criteria cri,PriceVO vo) {
 		//productView.jsp 에서 필요한 데이터를 검색해서 model에 담아서 
-		vo=service.selectPrice(vo); //가격상세 조회
+		vo=PriceService.selectPrice(vo); //가격상세 조회
 //		if(vo.getContent()!=null)
 //			vo.setContent(vo.getContent().replaceAll("\r\n", "<br>"));
 //		Map<String, Number> pmap=ProductServiceImpl.selectAvgCountScore(vo.getPnum());
@@ -60,20 +60,9 @@ public class PriceController {
 		return "price/priceNew";
 	}
 	@PostMapping("priceNew")
-	public String priceNew(@RequestParam MultipartFile uploadFile,PriceVO vo) throws IllegalStateException, IOException {
-		//업로드 파일 처리
-		//MultipartFile uploadFile=vo.getUploadFile();
-		if(!uploadFile.isEmpty()) {//서버에 저장 작업
-			String filename=uploadFile.getOriginalFilename();
-			//서버에 저장
-			UUID uuid=UUID.randomUUID();
-			String saveFilename=uuid+"-"+filename;
-			uploadFile.transferTo(new File(saveFilename));
-			//저장된 파일명을 vo 에 담는다
-			vo.setFilename(saveFilename);
-		}
-		//DB에 저장하기
-		service.insertPrice(vo);
+	public String priceNew(PriceVO vo,Model mode)  {
+		
+		PriceService.insertPrice(vo);
 		return "redirect:priceList";
 	}
 	
@@ -101,15 +90,15 @@ public class PriceController {
 			vo.setFilename(saveFilename);
 		}
 		//update 수행
-		service.updatePrice(vo);
+		PriceService.updatePrice(vo);
 		rd.addAttribute("pinum", vo.getPinum());
 		return "redirect:productView";
 	}
 	//priceDelete
 	@GetMapping("deletePrice")
 	public String deletePrice(@RequestParam int pinum) {
-		service.deletePrice(pinum);
-		return "forward:priceList";
+		PriceService.deletePrice(pinum);
+		return "forward:productView";
 	}
 }
 

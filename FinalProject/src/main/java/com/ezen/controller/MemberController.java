@@ -62,12 +62,10 @@ public class MemberController {
 		request.getSession().invalidate();
 		return "forward:productList";
 	}
-	
 	@GetMapping("register")
 	public String register() {
 		return "member/register";
 	}
-	
 	@PostMapping("register")
 	public String register(MemberVO vo) {
 		//db에 삽입작업-비밀번호 암호화 후
@@ -80,10 +78,8 @@ public class MemberController {
 		service.insertMember(vo);
 		return "member/login";
 	}
-	
 	@GetMapping("home")
-	public String home(BoardVO bvo) {
-		return "home";
-	}
-	
+	   public String home(BoardVO bvo) {
+	      return "home";
+	   }
 }

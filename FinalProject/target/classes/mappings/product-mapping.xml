@@ -5,16 +5,15 @@
 <mapper namespace="ProductDAO">
 	<insert id="insertProduct" parameterType="product">
 		insert into
-		product(pnum,pinum,ptype1,ptype2,ptype3,ptype4,ptype5,ptype6,ptype7,pname,pcompa,pcontent,pimg1,pimg2,psavimg,useitem)
+		product(pnum,pinum,ptype1,ptype2,ptype3,ptype4,ptype5,ptype6,ptype7,pname,pcompa,pcontent,pimg1,pimg2,psavimg)
 		values(PRODUCT_SEQ.nextval, PRICE_SEQ.nextval, #{ptype1}, #{ptype2},
 		#{ptype3}, #{ptype4}, #{ptype5}, #{ptype6},
 		#{ptype7}, #{pname}, #{pcompa},
-		#{pcontent}, #{pimg1},#{pimg2},#{psavimg},#{useitem})
+		#{pcontent}, #{pimg1},#{pimg2},#{psavimg})
 	</insert>
 
 	<select id="selectProductList" resultType="product">
-		select pnum, pname,
-		pcontent
+	select *
 		from product where useitem='Y'
 		order by preg desc
 	</select>
@@ -24,7 +23,13 @@
 		select * from (
 		select rownum rn, A.* from
 		(select
-		pnum,pname,pcompa,pcontent,preg from product where 1=1
+		pnum,ptype1,ptype2,pname,pcompa,pcontent,preg from product where 1=1
+		<if test="searchtype=='ptype1'">
+			and ptype1 like '%' || #{searchword} ||'%'
+		</if>
+		<if test="searchtype=='ptype2'">
+			and ptype2 like '%' || #{searchword} ||'%'
+		</if>
 		<if test="searchtype=='pname'">
 			and pname like '%' || #{searchword} ||'%'
 		</if>
@@ -75,7 +80,8 @@
 		where pnum=#{pnum}
 	</update>
 	
-	<update id="deleteProduct" parameterType="java.lang.Long">
+	<update id="deleteProduct" parameterType="product">
 		update product set useitem='N' where pnum=#{pnum}
 	</update>
+	
 </mapper>

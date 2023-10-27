@@ -14,29 +14,25 @@
 	<form action="priceNew" method="post" id="uploadForm"
 		enctype="multipart/form-data">
 		<table class="table table-sm table-bordered">
+		
 			<tr>
-				<th>제조회사</th>
-				<td><input type="text" size="120" maxlength="30" name="picompa"
-					id="pcompa" placeholder="제조회사명입력"></td>
-			</tr>
-			<tr>
-				<th>상품가격</th>
+				<th>가격입력</th>
 				<td><input type="text" size="120" maxlength="30" name="price"
-					id="price" placeholder="상품가격 입력"></td>
+					id="price" placeholder="가격입력"></td>
 			</tr>
-			<tr>
-				<th>상품 판매 페이지</th>
-				<td><input type="text" size="120" maxlength="30" name="pipage"
-					id="pipage" placeholder="상품판매 페이지 입력"></td>
+				<tr>
+				<th>판매되는페이지 입력</th>
+				<td><input type="text" size="120" maxlength="30" name="picompa"
+					id="picompa" placeholder="판매페이지 입력"></td>
 			</tr>
 		</table>
-		<c:if test="${sessionScope.role=='ADMIN'}">
+		
 			<div class="btn">
 				<button type="submit" class="btn btn-success">가격등록</button>
 				&nbsp;
 				<button type="reset" class="btn btn-secondary">다시입력</button>
 			</div>
-		</c:if>
+		
 	</form>
 </main>
 <%@ include file="../include/footer.jsp"%>
