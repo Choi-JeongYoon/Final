@@ -5,8 +5,10 @@
   content: "";
 }
 
+/* 주요이슈 보더 게시판 부분 CSS  */
 .main__inner, .footer__inner, .main-header__inner {
-  width: 1260px !important;
+  width: 800px !important;
+/*   width: 58% !important; */
 }
 
 .layer-main-noti .box__close .button__close::after, .layer-main-noti .box__bottom .button__today-close::after, .layer__ti__close, .layer__info-relate:before, .layer__nav-more:before, .category__depth__info:after, .category__depth__info:before, .category__depth__go:after, .category .ico_19, .category .ico_n, .category .ico_h, .prod-list__flag .ad, .prod-list__flag .tag--recent:before, .main-rocket .box__header .icon__rocket:after, .main-vs .main__header .title:after, .main-shopdnw__review__more .view:after, .main-shopdnw__review__info .star-inner, .main-shopdnw__review__info .star, .main-auto__model__circle .ico_movie, .main-dpg__list__movie:before, ul.main-dpg__list .main-dpg__list__link:before, .main-clip__left .link_go:after, .main-lowest__item:before, .main-info__list2__cont .link_relate:after, .main__more .btn_all:after, .swipe-control-hover .btn_next:before,
@@ -31,6 +33,7 @@
 body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, select, table, td, textarea, th, ul {
   margin: 0;
   padding: 0;
+  height: auto;
 }
 
 body, button, input, select, table, textarea {
@@ -285,13 +288,16 @@ input[type=text], input[type=search], textarea {
   text-decoration: none;
   box-sizing: border-box;
 }
+
+/* 메인 페이지 하단 회사명 부분 CSS ( footer ) */
 .footer__inner {
   position: relative;
-  margin: 0 auto;
+  margin: 0 285px auto;
   width: 925px;
   font-size: 13px;
   color: #555;
 }
+
 .footer__inner:after {
   display: block;
   clear: both;
@@ -364,7 +370,7 @@ input[type=text], input[type=search], textarea {
   width: 100%;
 	height: 110px; /* 내용물에 따라 알맞는 값 설정 */
 	bottom: 0px;
-	position: absolute;
+	position: relative;
 }
 
 .footer__info {
@@ -2459,9 +2465,11 @@ input[type=text], input[type=search], textarea {
   top: 0;
 }
 
+/* 지금 가장 인기 있는 상품 , 인기 쇼핑몰 부분 CSS */
 .main__inner {
   margin: 0 auto;
   box-sizing: border-box;
+  margin: 30px 285px auto;
 }
 .main__header .title {
   float: left;
@@ -2529,8 +2537,9 @@ input[type=text], input[type=search], textarea {
   float: right;
 }
 
+/* 배너와 인기상품 , 인기 쇼핑몰 사이 css */
 .main-top {
-  height: 426px;
+/*   height: 300px; */
 }
 .main-top__center {
   float: left;
@@ -2622,16 +2631,24 @@ input[type=text], input[type=search], textarea {
   width: 546px;
   height: 142px;
 }
+
+/* 배너 이미지 부분  CSS*/
 .main-middlebnr img {
-  width: 100%;
-  height: 100%;
+  width: 800px;
+  height: 142px;
+  margin: 0 0 auto;
 }
 
+/* 쇼핑정보 , 주요이슈 카테고리   */
 .main-info {
   position: relative;
   margin-top: 29px;
   z-index: 20;
+  display: inline-block;
+  width: 800px;
+  margin-left: 75px;
 }
+
 .main-info .main__header {
   margin-bottom: 4px;
 }
@@ -4550,12 +4567,14 @@ ul.main-dpg__list .main-dpg__list__link:before {
   letter-spacing: 0;
 }
 
+/* 왼쪽 전체 카테고리 라인 CSS ( 가전·TV , 컴퓨터·노트북 , 테블릿·모바일 )  */
 .category {
-  position: absolute;
+  position: relative;
   top: 100%;
   width: 201px;
   height: 426px;
   background: #2070EB;
+  display: inline-block;
   /* 
   &__list__row--tour &__2depth__left > &__depth > &__depth__row:not(:first-child){
       margin-top: 12px;

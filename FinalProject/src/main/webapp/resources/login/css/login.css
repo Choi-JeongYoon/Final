@@ -237,7 +237,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 
 .id_area,.pw_area {position:relative;margin-bottom:10px;}
 .captcha_area {position:relative;margin-bottom:17px;}
-.input_wrap {position:relative;height:29px;margin:0 0 10px 0;padding:10px 50px 10px 21px;border:solid 1px #bfbfbf;border-radius: 4px;background:#fff;}
+.input_wrap {position:relative;height:29px;margin:40px 0 10px 0;padding:10px 50px 10px 21px;border:solid 1px #bfbfbf;border-radius: 4px;background:#fff;}
 .input_wrap.error {border-color:#db3838;}
 .input_wrap.focus {border-color:#2070eb;}
 .err_txt {margin-bottom:10px;color:#e53b38;font-size:13px;letter-spacing:-.02em;}
@@ -254,7 +254,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .btn_pwview:before {content:"";display:inline-block;width:19px;height:19px;background:url(//img.danawa.com/img/auth/login_230714.png) no-repeat;background-position:-42px -40px;vertical-align:-3px;margin-right:4px;}
 .btn_pwview.on {color:#2070eb;}
 .btn_pwview.on:before {background-position:-65px -40px;}
-.btn_login {display:block;width:100%;height:50px;line-height:49px;background:#2070eb;border:0;border-radius: 4px;color:#fff;text-align:center;font-size:15px;font-weight:bold;cursor: pointer;}
+.btn_login {display:block;width:100%;height:50px;line-height:49px;background:#2070eb;border:0;border-radius: 4px;color:#fff;text-align:center;font-size:15px;font-weight:bold;cursor: pointer;margin-bottom:10px }
 
 /* menu_area */
 .menu_area {margin:17px 0 0 0;}
@@ -316,8 +316,8 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .join button:after,
 .selectbox button:after,
 .selectbox label:after {
-	background: url("/resources/img/8651574782_7d7d5261-303c-4a51-b4f2-1d6be0844972.png") no-repeat;
-	display: inline-block;
+	background: url("/resources/img/8651574782_7d7d5261-303c-4a51-b4f2-1d6be0844970.png") no-repeat;
+	display: inline-block; 
 }
 
 .body__login {background-color:#f5f5f5; font-family:"Malgun Gothic", "Apple SD Gothic Neo"}
@@ -325,7 +325,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .body__login .join_wrap {width: 600px;height:auto;margin:0 auto;background-color:#fff;}
 .header__login {width:440px;margin:0 auto;padding: 100px 0 0;position: relative;}
 .header__login:after {content:""; display:block; clear:both}
-.header__login .h_logo {width:128px; height: 28px;}
+.header__login .h_logo {width:162px; height: 60px;}
 .header__login .guest_orders {position:absolute;top:auto;bottom: -2px;letter-spacing: -.5px;line-height: 26px;right:0;border-radius: 2px;}
 .header__login .guest_orders:hover{text-decoration: none;}
 .header__login .btn_nonmember:after{content:none}
@@ -340,7 +340,9 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .btn_idsave:before {background-position: -144px -40px;width:18px;height: 20px;}
 .btn_idsave.on:before {background-position: -120px -40px;}
 .input-wrap--id .btn_del {right:78px}
-.content__sns {display:flex;margin: 40px auto 50px;text-align:center;justify-content:space-between;flex-wrap:wrap}
+
+/* 네이버 카카오 페이스북 로그인 css */
+.content__sns {display:flex;margin: 40px auto 50px;text-align:center;justify-content:space-between;flex-wrap:wra;margin-left: 50;}
 .content__sns a:hover{text-decoration: none;}
 .sns_area .box__sns{position:relative}
 .link__sns {text-decoration:none;display:inline-flex;flex-direction:column;align-items:center}

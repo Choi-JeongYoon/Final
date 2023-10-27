@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page import="com.ezen.biz.dto.ProductVO"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +19,7 @@
 <meta name="author" content="http://www.danawa.com">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="스마트한 쇼핑검색, 다나와! : 가격비교 사이트" />
-<meta property="og:url" content="http://www.danawa.com" />
+<meta property="og:url" content="home" />
 <meta property="og:type" content="website" />
 <meta property="og:description"
 	content="가격비교 사이트 - 온라인 쇼핑몰, 소셜커머스 전 상품 정보 가격비교 사이트, 비교하면 다나와" />
@@ -72,7 +73,7 @@
 
 <div class="main-header__banner">
 	<h1 class="main-header__logo">
-		<a href="https://www.danawa.com"> <span class="blind"></span><img
+		<a href="home"> <span class="blind"></span><img
 			src="/resources/img/8651574782_7d7d5261-303c-4a51-b4f2-1d6be0844970.png"
 			alt="다나와유 로고">
 		</a>
