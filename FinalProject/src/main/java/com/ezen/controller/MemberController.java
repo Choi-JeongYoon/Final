@@ -26,7 +26,7 @@ public class MemberController {
 	@Autowired
 	private MemberService service;
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+
 	public String home() {		
 		return "home";
 	}
@@ -57,10 +57,10 @@ public class MemberController {
 			}
 		}
 	}
-	@RequestMapping("logout")
+	@GetMapping("logout")
 	public String logout(HttpServletRequest request) {
 		request.getSession().invalidate();
-		return "forward:productList";
+		return "forward:/";
 	}
 	@GetMapping("register")
 	public String register() {

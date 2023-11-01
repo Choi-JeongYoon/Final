@@ -17,8 +17,8 @@ public class PriceDAO {
 	public void insertPrice(PriceVO vo) {
 		mybatis.insert("PriceDAO.insertPrice",vo);
 	}
-	public List<PriceVO> selectPriceList(){
-		return mybatis.selectList("PriceDAO.selectPriceList");
+	public List<PriceVO> selectPriceList(int pnum){
+		return mybatis.selectList("PriceDAO.selectPriceList",pnum);
 	}
 	public PriceVO selectPrice(PriceVO vo) {
 		return mybatis.selectOne("PriceDAO.selectPrice", vo);

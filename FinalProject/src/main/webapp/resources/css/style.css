@@ -26,7 +26,8 @@ body{ font-family : 나눔고딕;
 .navi_box{
     float:clear; 
 	width:300px; height:1000px;	
-	background:yellow;
+	background:#ddd;
+	
 }
 
 .navi_box > ul{

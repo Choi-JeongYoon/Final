@@ -16,8 +16,8 @@ public class PriceServiceImpl implements PriceService{
 		dao.insertPrice(vo);
 	}
 
-	public List<PriceVO> selectPriceList() {
-		return dao.selectPriceList();
+	public List<PriceVO> selectPriceList(int pnum) {
+		return dao.selectPriceList(pnum);
 	}
 
 	

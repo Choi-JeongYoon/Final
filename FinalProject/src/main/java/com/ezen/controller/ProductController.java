@@ -25,8 +25,12 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.ezen.biz.dto.McateInfo;
+import com.ezen.biz.dto.McateVO;
 import com.ezen.biz.dto.PriceVO;
 import com.ezen.biz.dto.ProductVO;
+import com.ezen.biz.dto.ScateInfo;
+import com.ezen.biz.service.CateService;
 import com.ezen.biz.service.ProductService;
 import com.ezen.biz.service.ProductServiceImpl;
 import com.ezen.biz.utils.Criteria;
@@ -40,15 +44,17 @@ public class ProductController {
 	@Autowired
 	private ProductService service;
 	@Autowired
-	private com.ezen.biz.service.PriceService PriceService;
+	private com.ezen.biz.service.PriceService priceService;
+	@Autowired
+	private CateService CateService;
 	
 	
 	private final String imgPath="C:/final/pimg/";
 	
 	
 	@RequestMapping(value = "productList")
-	public String selectProductList(Model model,Criteria cri) {
-		List<ProductVO> list=service.selectProductList(cri);
+	public String selectProductList(Model model,Criteria cri,String subcategory) {
+		List<ProductVO> list=service.selectProductList(subcategory);
 		model.addAttribute("list", list);
 		//PageMaker 객체 생성 : 
 		int cnt=service.selectRowCount(cri);
@@ -57,13 +63,28 @@ public class ProductController {
 		return "product/productList";
 	}
 	
+
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String home(Model model) {	
+		log.info("dfdsfa");
+		List<McateVO> list=CateService.selectCate();
+		log.info(list);
+		model.addAttribute("list", list);
+		
+		//List<ScateVO> sCate=service.
+		return "home";
+	}
+	
 	@GetMapping("productView")
 	public String productView(Model model,Criteria cri,ProductVO vo) {
 		//productView.jsp 에서 필요한 데이터를 검색해서 model에 담아서 
+		log.info("vo====="+vo);
 		vo=service.selectProduct(vo); //도서상세 조회
 		model.addAttribute("product",vo);
 		model.addAttribute("cri", cri);
-		List<PriceVO> list1=PriceService.selectPriceList();
+		log.info("vo.getPnum()="+vo.getPnum());
+		List<PriceVO> list1=priceService.selectPriceList(vo.getPnum());
+		log.info("list1====="+list1);
 		model.addAttribute("list1", list1);
 		if(vo.getFilename()!=null)
 			model.addAttribute("originFilename",vo.getFilename().substring(37));
@@ -106,12 +127,20 @@ public class ProductController {
 		}
 	//상품 등록
 	@GetMapping("productNew")
-	public String productNew() {
+	public String productNew(Model model) {
+		List<McateInfo> mCate=CateService.selectProductMCateList();
+		model.addAttribute("mCate", mCate);
+		
+		List<ScateInfo> sCate=CateService.selectProductSCateList();
+		model.addAttribute("sCate", sCate);
 		return "product/productNew";
 	}
 	@PostMapping("productNew")
-	public String productNew(MultipartFile[] uploadFile, ProductVO vo ,Model model) {
+	public String productNew(MultipartFile[] uploadFile, ProductVO vo ,Model model, @RequestParam String mCate) {
 		int cnt = 0;
+		log.info("전----:"+vo);
+		vo.setPtype1(mCate);
+		log.info("후ㅡ----:"+vo);
 		for (MultipartFile multipartFile : uploadFile) {
 
 			log.info("-------------------------------------");
@@ -203,5 +232,6 @@ public class ProductController {
 		return "forward:productList";
 		
 	}
-	
+
+
 }

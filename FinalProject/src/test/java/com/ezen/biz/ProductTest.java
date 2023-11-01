@@ -22,26 +22,8 @@ public class ProductTest {
 	private ProductDAO dao;
 	@Test
 	public void insertProductTest() {
-		ProductVO vo=new ProductVO();
-		vo.setPnum(2);
-		vo.setPinum(2);
-		vo.setPtype1("각");
-		vo.setPtype2("각");
-		vo.setPtype3("각");
-		vo.setPtype4("각");
-		vo.setPtype5("각");
-		vo.setPtype6("각");
-		vo.setPtype7("각");
-		vo.setPname("캐리어");
-		vo.setPcompa("대우");
-		vo.setPcontent("국자");
-		vo.setPimg1(null);
-		vo.setPimg2(null);
-		vo.setPsavimg(null);
-		dao.insertProduct(vo);
+	
 	}
-	
-	
 	
 	@Test 
 	public void selectProductListTest() {

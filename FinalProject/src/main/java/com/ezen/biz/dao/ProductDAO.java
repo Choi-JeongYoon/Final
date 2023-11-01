@@ -17,8 +17,8 @@ public class ProductDAO{
 	public void insertProduct(ProductVO vo) {
 		mybatis.insert("ProductDAO.insertProduct", vo);
 	}
-	public List<ProductVO> selectproductList(){
-		return mybatis.selectList("ProductDAO.selectProductList");
+	public List<ProductVO> selectproductList(String subcategory){
+		return mybatis.selectList("ProductDAO.selectProductList",subcategory);
 	}
 	public int selectRowCount() {
 		return mybatis.selectOne("ProductDAO.selectRowCount");

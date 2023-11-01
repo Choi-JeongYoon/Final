@@ -17,21 +17,10 @@
 	<h2>가격 목록</h2>
 <div id="top-button">
 		<c:if test="${sessionScope.role=='ADMIN'}">
-			<a href="priceNew"><button type="button" class="btn btn-primary">가격등록</button></a>
+			<a href="priceNew?pnum=${pnum}"><button type="button" class="btn btn-primary">가격등록</button></a>
 			
 		</c:if>
 	</div>
-		      <!--  검색 -->
-    <div id="searchdiv">	 	
-		<form action="productList" method="post">
-	        <select name="searchtype" id="searchtype">
-	            <option value="pname" checked>가격번호</option>
-	            <option value="pcompa">가격</option>
-	            <option value="pcontent">판매회사</option>
-	        </select>
-	        <input type="text" size="20" name="searchword" id="searchword" >
-	        <button onclick="return searchFun()">검 색</button> &nbsp;	        
-	    </form>		
 
  	</div>		
  	

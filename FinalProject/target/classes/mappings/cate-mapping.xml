@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CategoryDAO">
+	<resultMap type="com.ezen.biz.dto.ScateVO" id="scateMap">
+	  	<result property="sseq" column="sseq"/>
+	  	<result property="sname"   column="sname"/>
+  	</resultMap>
+  	<resultMap type="com.ezen.biz.dto.McateVO" id="cateMap">
+	  	<id property="mseq" column="mseq"/>
+	  	<result property="mname" column="mname"/>
+	   	<collection property="subCateList" resultMap="scateMap"/>
+   </resultMap>
+   <select id="selectCate" resultMap="cateMap">
+		select m.mseq,mname,sseq,sname from mcate m
+		    left outer join scate s
+		        on m.mseq=s.mseq
+   </select>
+ 
+   <select id="selectProductMCateList" resultType="com.ezen.biz.dto.McateInfo">
+	   	select DISTINCT ptype1 
+		from product
+		order by ptype1
+   </select>
+   <select id="selectProductSCateList" resultType="com.ezen.biz.dto.ScateInfo">
+		select DISTINCT ptype1,ptype2
+		from product
+		order by ptype1,ptype2
+   </select>
+</mapper>

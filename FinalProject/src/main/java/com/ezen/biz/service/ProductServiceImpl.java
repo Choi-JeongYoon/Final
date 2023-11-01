@@ -16,8 +16,8 @@ public class ProductServiceImpl implements ProductService{
 		dao.insertProduct(vo);
 	}
 
-	public List<ProductVO> selectProductList() {
-		return dao.selectproductList();
+	public List<ProductVO> selectProductList(String subcategory) {
+		return dao.selectproductList(subcategory);
 	}
 
 	public int selectRowCount() {
@@ -41,5 +41,10 @@ public class ProductServiceImpl implements ProductService{
 	
 	public void deleteProduct(int bno) {
 		dao.deleteProduct(bno);
+	}
+
+	@Override
+	public List<ProductVO> selectProductList() {
+		return null;
 	}
 }

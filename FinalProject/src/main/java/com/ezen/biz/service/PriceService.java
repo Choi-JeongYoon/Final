@@ -9,7 +9,7 @@ public interface PriceService {
 
 	void insertPrice(PriceVO vo);
 
-	List<PriceVO> selectPriceList();
+	List<PriceVO> selectPriceList(int pnum);
 
 	PriceVO selectPrice(PriceVO vo);
 

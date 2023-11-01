@@ -18,12 +18,15 @@ th {
 td {
 	text-align: left;
 }
+
 </style>
 <main>
 	<h2>상품 상세</h2>
+	
 	<c:if test="${sessionScope.role=='ADMIN'}">
-			<a href="priceList"><button type="button" class="btn btn-primary">가격등록/삭제/수정/admin</button></a>
+			<a href="priceList?pnum=${product.pnum}"><button type="button" class="btn btn-primary">가격등록/삭제/수정/admin</button></a>
 			</c:if>
+			
 	<form action="productUpdate" method="post"
 		enctype="multipart/form-data" id="uploadForm" name="uploadForm">
 		<input type="hidden" value="${product.pnum}" name="pnum" id="pnum">
@@ -32,7 +35,7 @@ td {
 		<input type="hidden" value="${cri.searchtype}" name="searchtype"> 
 	    <input type="hidden" value="${cri.searchword}" name="searchword">
 		<table class="table table-sm table-bordered">
-		
+	
 			<tr>
 				<th>상품제목</th>
 				<td class="disp">${product.pname}</td>
@@ -97,24 +100,26 @@ td {
 		</table>
 		</form>
 		<table class="table table-sm table-bordered">
-		<tr>
-			<th>가격</th>
-			<th>판매페이지</th>
-		</tr>
-		<c:forEach items="${list1}" var="price" varStatus="sts">
+	<tr>
+		<th>가격</th>
+		<th>판매페이지</th>
+	</tr>
+	<c:forEach items="${list1}" var="price" varStatus="sts">
+		
 			<tr>
 				<td>${price.price}</td>
 				<td>${price.picompa}</td>
-			</tr>	
-		</c:forEach>
-	 </table>
+			</tr>
+		
+	</c:forEach>
+</table>
 	 
 		<div class="btn_rud">
 			<button type="button" id="btnList"
 				onclick="location.href='productList?pageNum=${cri.pageNum}&searchword=${cri.searchword}&searchtype=${cri.searchtype}'"
 				class="btn btn-success">상품목록</button>
+			
 			<c:if test="${sessionScope.role=='ADMIN'}">
-
 				<button type="button" id="btnEdit" onclick="productEdit()"
 					class="btn btn-warning">상품수정</button>
 
@@ -168,6 +173,5 @@ td {
 		$("#btnSave").css("display", "none");
 		$("#btnCancle").css("display", "none");
 	}
-	
+
 </script>
-<%@ include file="../include/footer.jsp"%>

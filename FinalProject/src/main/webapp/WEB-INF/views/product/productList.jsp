@@ -3,64 +3,32 @@
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ include file="../include/header.jsp" %>
-<div id="head">
-	 <div id="navi_box">
-	 	<ul>
-			<li><a href="#">가전·TV</a>
 
-				<ul class="sub">
-					<li><a href="#">TV</a></li>
-					<li><a href="#">냉장고</a></li>
-					<li><a href="#">세탁기/건조기</a></li>
-					<li><a href="#">계절가전</a></li>					
-				</ul>
-			</li>
-			<li><a href="#">컴퓨터·노트북</a>
-				<ul class="sub">
-					<li><a href="#">컴퓨터</a></li>
-					<li><a href="#">노트북</a></li>
-					<li><a href="#">주요부품</a></li>
-					<li><a href="#">저장장치</a></li>	
-					<li><a href="#">게임기</a></li>		
-				</ul>
-			</li>
-
-			<li><a href="#">태블릿·모바일</a>
-				<ul class="sub">
-					<li><a href="#">휴대폰/스마트폰</a></li>
-					<li><a href="#">태블릿/전자책</a></li>
-					<li><a href="#">스마트워치</a></li>
-					<li><a href="#">이어폰/헤드폰</a></li>
-				</ul>
-			</li>
-
-			<li><a href="#">패션·잡화·뷰티</a>
-				<ul class="sub">
-					<li><a href="#">가방/지갑</a></li>
-					<li><a href="#">남성 의류</a></li>
-					<li><a href="#">여성 의류</a></li>
-					<li><a href="#">스킨케어/향수</a></li>
-				</ul>
-			</li>
-		</ul>
-	 </div><!-- 메뉴 navi_box-->
-  </div><!-- head -->
 <style>
-#navibox{
-	display:flex;
+	#navibox{
+		display:flex;
 		justify-content: left;
 		height:100;
 }
-	#pagediv,#searchdiv{
+	#searchdiv{
+		background-color:#ccc;
 		display:flex;
-		justify-content: center;
+		justify-content: left;
+	}
+	#pagediv{
+		background-color:#ccc;
+		display:flex;
+		font-weight:bold;
+		
 	}
 	#top-button{
+		background-color:#eee;
 		display:flex;
-		justify-content: right;
+		justify-content: center;
 		padding:10px;
 	}
 </style>
+
 <main>
 	<div id="top-button">
 		<c:if test="${sessionScope.role=='ADMIN'}">
@@ -68,6 +36,7 @@
 			
 		</c:if>
 	</div>
+	
 	      <!--  검색 -->
     <div id="searchdiv">	 	
 		<form action="productList" method="post">
@@ -112,6 +81,7 @@
 			</tr>	
 		</c:forEach>
 	 </table>
+	 
 	 <div id="pagediv">
 		 <!-- 페이지 -->	 
 	     <nav aria-label="Standard pagination example">
@@ -141,20 +111,5 @@
     </div>
   
  </main>
-<script type="text/javascript">
-	function searchFun() {
-		//id searchword에 값을 가져온다
-		let searchword=document.querySelector("#searchword");
-		//값 trim 수행 빈것이면 alert 포커스 searchword return false
-		if(searchword.value.trim()===""){
-			//alert("검색어를 입력하세요.");
-			searchword.value="";
-			//searchword.focus();
-			//return false;
-		}
-		//검색어가 있으면 return true
-		return true;
-	}
-	
-</script>
+
 <%@ include file="../include/footer.jsp" %>

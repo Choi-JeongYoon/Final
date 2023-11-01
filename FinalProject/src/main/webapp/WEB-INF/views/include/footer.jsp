@@ -128,5 +128,13 @@
 	</div>
 </div>
 
+   <div class="copyright">
+     <ul class="f_box">
+	    <li></li><!-- 하단로고-->
+		<li></li><!-- 카피라이트 -->
+		<li></li><!-- SNS아이콘 -->
+	 </ul>
+   </div>
+
 </body>
 </html>

@@ -41,6 +41,9 @@
 	href="/resources/css/headerandfooter2.css" />
 <link rel="stylesheet" type="text/css"
 	href="/resources/css/headerandfooter3.css" />
+	<link href="/resources/css/style.css" type="text/css" rel="stylesheet">
+<script src="/resources/js/jquery-3.6.3.min.js" type="text/javascript"></script>
+<script src="/resources/js/jQuery.js" type="text/javascript"></script>
 <script type="text/javascript"
 	src="//static.danawa.com/globaljs/external/jquery/core/1.11.0/jquery-1.11.0.min.js?v=2305031517"></script>
 <script type="text/javascript" charset="euc-kr"
@@ -52,7 +55,6 @@
 <script type="text/javascript" charset="utf-8"
 	src="//static.danawa.com/globaljs/com/danawa/common/searchAutocompleteLayer_UTF8.js?v=2305031517"></script>
 
-<!-- Google Tag Manager -->
 <script>
 	(function(w, d, s, l, i) {
 		w[l] = w[l] || [];
@@ -73,11 +75,13 @@
 
 <div class="main-header__banner">
 	<h1 class="main-header__logo">
-		<a href="home"> <span class="blind"></span><img
+		<a href="/"> <span class="blind"></span><img
 			src="/resources/img/8651574782_7d7d5261-303c-4a51-b4f2-1d6be0844970.png"
 			alt="다나와유 로고">
 		</a>
 	</h1>
+
+
 	<div class="main-header__search">
 		<div class="search">
 			<form id="srchFRM_TOP" name="srchFRM_TOP" style="margin: 0px;"
@@ -99,7 +103,7 @@
 						<script type="text/javascript"
 							src="//ad.danawa.com/RealMedia/ads/adstream_jx.ads/www.danawa.com/main@x50"></script>
 					</div>
-					<script type="text/javascript">
+					<!-- script type="text/javascript">
 						var adv_srch_type = null;
 						var adv_srch_obj = null;
 						var adv_srch_url = null;
@@ -129,7 +133,7 @@
 									});
 
 						});
-					</script>
+						</script -->
 					<div id="auto_area2" class="auto_complete_area"
 						style="display: none;">
 						<div id="akcLayer" class="auto_word_list">
@@ -198,30 +202,40 @@
 			</a>
 		</div>
 		<div class="item">
-			<c:choose>
+		<c:choose>
 			<c:when test="${sessionScope.name==null}">
-				<button type="button" id="login" name="login"
-					onclick="location.href='login'" class="btn btn-success">로그인</button>
-				<button type="button" id="register" name="register"
-					onclick="location.href='register'" class="btn btn-warning">회원가입</button>
-			</c:when>
+		<a href="login" role="button" 
+		class="btn_user btn_user--login">
+		<span class="txt">로그인</span>	
+		</a>
+		</c:when>
 			<c:otherwise>
-			${sessionScope.name}님 
-			<button type="button" id="logout" name="logout"
-					onclick="location.href='home'" class="btn btn-success">로그아웃</button>
-			</c:otherwise>
+		<a href="/" role="button"
+		 class="btn_user btn_user--login">
+		<span class="txt">${sessionScope.name}</span><em class="lo_nim">님</em>	</a>
+		</c:otherwise>
 		</c:choose>
+		</div>
+		
 			<div class="layer__user-more" style="display: none;">
 				<ul class="more-list">
+				<c:choose>
+		<c:when test="${sessionScope.name==null}">
 					<li class="item_more"><a
 						href="login"
 						class="link_more">로그인</a></li>
 					<li class="item_more"><a
 						href="register" class="link_more">회원가입</a></li>
-					<li class="item_more"><a href="http://help.danawa.com"
+						</c:when>
+		<c:otherwise>
+					<li class="item_more"><a 
+					href="logout" class="link_more">로그아웃</a></li>
+		</c:otherwise>
+	    </c:choose>	
+						<li class="item_more"><a href="http://help.danawa.com"
 						class="link_more">고객센터</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
-</div>
+

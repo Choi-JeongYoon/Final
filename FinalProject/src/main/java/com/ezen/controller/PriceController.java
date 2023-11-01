@@ -21,16 +21,20 @@ import com.ezen.biz.dto.PriceVO;
 import com.ezen.biz.service.PriceService;
 import com.ezen.biz.utils.Criteria;
 
+import lombok.extern.log4j.Log4j;
+
 
 @Controller
 @SessionAttributes("price")
+@Log4j
 public class PriceController {
 	@Autowired
-	private PriceService PriceService;
+	private PriceService priceService;
 
 	@RequestMapping(value="priceList")
-	public String selectPriceList(Model model,Criteria cri) {
-		List<PriceVO> list1=PriceService.selectPriceList();
+	public String selectPriceList(Model model,Criteria cri,int pnum) {
+		List<PriceVO> list1=priceService.selectPriceList(pnum);
+		model.addAttribute("pnum", pnum);
 		model.addAttribute("list1", list1);
 		return "price/priceList";
 	}
@@ -40,14 +44,18 @@ public class PriceController {
 	@GetMapping("priceView")
 	public String priceView(Model model,Criteria cri,PriceVO vo) {
 		//productView.jsp 에서 필요한 데이터를 검색해서 model에 담아서 
-		vo=PriceService.selectPrice(vo); //가격상세 조회
+		log.info(vo);
+		vo=priceService.selectPrice(vo); //가격상세 조회
 //		if(vo.getContent()!=null)
 //			vo.setContent(vo.getContent().replaceAll("\r\n", "<br>"));
 //		Map<String, Number> pmap=ProductServiceImpl.selectAvgCountScore(vo.getPnum());
 //		System.out.println(pmap);
 //		model.addAttribute("pmap",pmap);
+		
 		model.addAttribute("price",vo);
 		model.addAttribute("cri", cri);
+		List<PriceVO> list1=priceService.selectPriceList(vo.getPnum());
+		log.info("list1---------------"+list1);
 		if(vo.getFilename()!=null)
 			model.addAttribute("originFilename",vo.getFilename().substring(37));
 		return "price/priceView";
@@ -56,14 +64,15 @@ public class PriceController {
 	//priceNew
 
 	@GetMapping("priceNew")
-	public String priceNew() {
+	public String priceNew(@RequestParam int pnum,Model model) {
+		model.addAttribute("pnum", pnum);
 		return "price/priceNew";
 	}
 	@PostMapping("priceNew")
-	public String priceNew(PriceVO vo,Model mode)  {
-		
-		PriceService.insertPrice(vo);
-		return "redirect:priceList";
+	public String priceNew(PriceVO vo)  {
+		log.info(vo);
+		priceService.insertPrice(vo);
+		return "redirect:priceList?pnum="+vo.getPnum();
 	}
 	
 	//priceUpdate
@@ -90,14 +99,14 @@ public class PriceController {
 			vo.setFilename(saveFilename);
 		}
 		//update 수행
-		PriceService.updatePrice(vo);
+		priceService.updatePrice(vo);
 		rd.addAttribute("pinum", vo.getPinum());
 		return "redirect:productView";
 	}
 	//priceDelete
 	@GetMapping("deletePrice")
 	public String deletePrice(@RequestParam int pinum) {
-		PriceService.deletePrice(pinum);
+		priceService.deletePrice(pinum);
 		return "forward:productView";
 	}
 }

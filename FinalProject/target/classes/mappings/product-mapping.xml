@@ -5,16 +5,15 @@
 <mapper namespace="ProductDAO">
 	<insert id="insertProduct" parameterType="product">
 		insert into
-		product(pnum,pinum,ptype1,ptype2,ptype3,ptype4,ptype5,ptype6,ptype7,pname,pcompa,pcontent,pimg1,pimg2,psavimg)
-		values(PRODUCT_SEQ.nextval, PRICE_SEQ.nextval, #{ptype1}, #{ptype2},
-		#{ptype3}, #{ptype4}, #{ptype5}, #{ptype6},
-		#{ptype7}, #{pname}, #{pcompa},
+		product(pnum,ptype1,ptype2,pname,pcompa,pcontent,pimg1,pimg2,psavimg)
+		values(PRODUCT_SEQ.nextval, #{ptype1}, #{ptype2},
+		#{pname}, #{pcompa},
 		#{pcontent}, #{pimg1},#{pimg2},#{psavimg})
 	</insert>
 
 	<select id="selectProductList" resultType="product">
 	select *
-		from product where useitem='Y'
+		from product where useitem='Y' and ptype2=#{subcategory}
 		order by preg desc
 	</select>
 	<!-- 검색조건+페이징 목록가져오기 -->
@@ -73,8 +72,7 @@
 
 	<update id="updateProduct" parameterType="product">
 		update product set pname=#{pname},pcompa=#{pcompa}, ptype1=#{ptype1},
-		ptype2=#{ptype2}, ptype3=#{ptype3},
-		ptype4=#{ptype4}, ptype5=#{ptype5}, ptype6=#{ptype6}, ptype7=#{ptype7},
+		ptype2=#{ptype2},
 		pcontent=#{pcontent}, pimg1=#{pimg1}, pimg2=#{pimg2} ,
 		psavimg=#{psavimg}
 		where pnum=#{pnum}

@@ -6,7 +6,7 @@
 	<insert id="insertPrice" parameterType="price">
 		insert into
 		price(pinum,pnum,picompa,price,pipage)
-		values(PRICE_SEQ.nextval, PRODUCT_SEQ.nextval, #{picompa}, #{price},
+		values(PRICE_SEQ.nextval,  #{pnum}, #{picompa}, #{price},
 		#{pipage})
 	</insert>
 
@@ -14,6 +14,7 @@
 		select pinum, picompa,
 		price,pipage
 		from price 
+		where pnum=#{pnum}
 	</select>
 	
 

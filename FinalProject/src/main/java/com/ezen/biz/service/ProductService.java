@@ -13,7 +13,7 @@ public interface ProductService {
 
 	int selectRowCount();
 
-	List<ProductVO> selectProductList(Criteria cri);
+	List<ProductVO> selectProductList(String subcategory);
 
 	int selectRowCount(Criteria cri);
 

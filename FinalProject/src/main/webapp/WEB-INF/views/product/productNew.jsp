@@ -3,31 +3,36 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%@ include file="../include/header.jsp"%>
-<style>
-.btn {
-	display: flex;
-	justify-content: center;
-}
-</style>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
 <main>
 	<h2>상품 등록</h2>
-	<form action="productNew" method="post" id="uploadForm"
-		enctype="multipart/form-data">
+ 	<form action="productNew" method="post" id="uploadForm" enctype="multipart/form-data"> 
 		<table class="table table-sm table-bordered">
-		 <label>ptype1</label>
- <select class="category1">
-  <option value="">전체</option>
- </select>
- 
- <label>ptype2</label>
- <select class="category2">
-  <option value="">전체</option>
- </select>
- <tr>
-				<th>상품명</th>
-				<td><input type="text" size="120" maxlength="50" name="ptype1"
-					id="ptype1" placeholder="카테고리1" required></td>
-			</tr>
+		<tr>
+			<td>
+				<label for="ptype1">메인카테고리</label>
+				  <select name="mCate" id="mCate" onchange="subCateChange()">
+				  	<c:forEach items="${mCate}" var="m">
+				    <option value="${m.ptype1}">${m.ptype1}</option>
+				    </c:forEach>
+				  </select> 
+			</td>
+			<td>
+				<label for="sCate">서브카테고리</label>
+				  <select name="ptype2" id="sCate">
+				  </select> 				
+				  
+				 <div style="display:none"> 
+
+				  	<c:forEach items="${sCate}" var="s">
+				     	<div class="item${s.ptype1} ${s.ptype2}">${s.ptype2}:${s.ptype1}</div>
+				    </c:forEach>
+					</div>
+			</td>
+		</tr>
+		
+		
 			<tr>
 				<th>상품명</th>
 				<td><input type="text" size="120" maxlength="50" name="pname"
@@ -70,4 +75,36 @@
 		</c:if>
 	</form>
 </main>
+<script type="text/javascript">
+
+
+	$( document ).ready(function() {
+	    console.log( "ready!" );
+	    
+	    subCateChange();
+	});
+	//subcatechange
+	function subCateChange(){
+		
+		console.log($("#mCate").val());
+		
+		var selected = $("#mCate").val();// 선택한 값
+		
+		var opt = $(".item"+selected);
+	
+		
+		var j;
+		var html="";
+		
+		for(i of opt){
+			j = $(i).html().split(":");
+			console.log(j);
+			
+			html += '<option value="'+j[0]+'">'+j[0]+'</option>';
+		}
+		
+		$("#sCate").html(html);
+		
+	}
+</script>
 <%@ include file="../include/footer.jsp"%>
