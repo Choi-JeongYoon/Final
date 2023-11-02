@@ -39,7 +39,6 @@ public class MemberController {
 	public String login(MemberVO vo,Model model
 			,HttpServletRequest request) {
 		MemberVO v=service.selectMember(vo.getId());
-		log.info("post login");
 		if(v==null) {
 			model.addAttribute("error", "없는 아이디 입니다.");
 			return "member/login";
@@ -50,7 +49,7 @@ public class MemberController {
 				session.setAttribute("id", v.getId());
 				session.setAttribute("name", v.getNickname());
 				session.setAttribute("role", v.getRole());
-				return "forward:productList";
+				return "redirect:/";
 			}else {
 				model.addAttribute("error", "패스워드가 다릅니다.");
 				return "member/login";

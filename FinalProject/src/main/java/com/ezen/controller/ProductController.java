@@ -166,7 +166,7 @@ public class ProductController {
 		//DB에 저장하기
 		vo.setPsavimg(imgPath);
 		service.insertProduct(vo);
-		return "forward:productList";
+		return "redirect:/";
 	}
 	//상품 수정
 	@PostMapping("productUpdate")

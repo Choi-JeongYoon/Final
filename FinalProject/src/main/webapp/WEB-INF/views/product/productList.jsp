@@ -27,6 +27,9 @@
 		justify-content: center;
 		padding:10px;
 	}
+	.page-item{
+		display: inline-block;
+	}
 </style>
 
 <main>
@@ -88,7 +91,7 @@
 	          <ul class="pagination">
 		         <c:if test="${pmaker.prev}">
 		            <li class="page-item">
-		              <a class="page-link" href="productList?pageNum=${pmaker.beginPage-1}&searchword=${pVo.searchword}&searchtype=${pVo.searchtype}" aria-label="Previous">
+<a class="page-link" href="productList?pageNum=${pmaker.beginPage-1}&searchword=${pVo.searchword}&searchtype=${pVo.searchtype}" aria-label="Previous">이전</a>
 		                <span aria-hidden="true">&laquo;</span>
 		              </a>
 		            </li>   

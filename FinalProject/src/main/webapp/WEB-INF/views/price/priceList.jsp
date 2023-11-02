@@ -18,8 +18,8 @@
 <div id="top-button">
 		<c:if test="${sessionScope.role=='ADMIN'}">
 			<a href="priceNew?pnum=${pnum}"><button type="button" class="btn btn-primary">가격등록</button></a>
-			
 		</c:if>
+			<a href="productView?pnum=${pnum}"><button type="button" class="btn btn-primary">상품으로이동</button></a>
 	</div>
 
  	</div>		
