@@ -359,39 +359,6 @@
 				</div>
 			</div>
 
-
-
-
-			<!-- <!-- 스크롤시 선택 메뉴창 -->
-			<!-- <div class="main__cont"> -->
-			<!-- 	<div class="main-top100__nav" style="top: 259.2px;"> -->
-			<!-- 		<!-- 선택 시 active 클래스 추가 -->
-			<!-- 		<!--             <a href="#" role="button" id="top100Nav_0" class="main-top100__nav__anchor active">전체</a> -->
-			<!-- 		<a href="#top100_0" role="button" id="top100Nav_0" -->
-			<!-- 			class="main-top100__nav__anchor" data-section="top100_0">전체</a><a -->
-			<!-- 			href="#top100_10" role="button" id="top100Nav_10" -->
-			<!-- 			class="main-top100__nav__anchor" data-section="top100_10">가전<br>TV -->
-			<!-- 		</a><a href="#top100_11" role="button" id="top100Nav_11" -->
-			<!-- 			class="main-top100__nav__anchor" data-section="top100_11">컴퓨터<br>노트북<br>조립PC -->
-			<!-- 		</a><a href="#top100_12" role="button" id="top100Nav_12" -->
-			<!-- 			class="main-top100__nav__anchor" data-section="top100_12">태블릿<br>모바일<br>디카 -->
-			<!-- 		</a><a href="#top100_13" role="button" id="top100Nav_13" -->
-			<!-- 			class="main-top100__nav__anchor active" data-section="top100_13">아웃도어<br>스포츠<br>골프 -->
-			<!-- 		</a><a href="#top100_14" role="button" id="top100Nav_14" -->
-			<!-- 			class="main-top100__nav__anchor" data-section="top100_14">자동차<br>용품<br>공구 -->
-			<!-- 		</a><a href="#top100_15" role="button" id="top100Nav_15" -->
-			<!-- 			class="main-top100__nav__anchor" data-section="top100_15">가구<br>조명 -->
-			<!-- 		</a><a href="#top100_16" role="button" id="top100Nav_16" -->
-			<!-- 			class="main-top100__nav__anchor" data-section="top100_16">식품<br>유아<br>완구 -->
-			<!-- 		</a><a href="#top100_17" role="button" id="top100Nav_17" -->
-			<!-- 			class="main-top100__nav__anchor" data-section="top100_17">생활<br>주방<br>건강 -->
-			<!-- 		</a><a href="#top100_18" role="button" id="top100Nav_18" -->
-			<!-- 			class="main-top100__nav__anchor" data-section="top100_18">패션<br>잡화<br>뷰티 -->
-			<!-- 		</a><a href="#top100_19" role="button" id="top100Nav_19" -->
-			<!-- 			class="main-top100__nav__anchor" data-section="top100_19">반려동물<br>취미<br>사무 -->
-			<!-- 		</a> -->
-			<!-- 	</div> -->
-
 			<!-- 연결 쇼핑몰 -->
 			<strong class="main-mall__title">인기쇼핑몰</strong>
 

@@ -32,6 +32,8 @@
 	}
 </style>
 
+
+
 <main>
 	<div id="top-button">
 		<c:if test="${sessionScope.role=='ADMIN'}">
@@ -44,15 +46,9 @@
 	      <!--  검색 -->
     <div id="searchdiv">	 	
 		<form action="productList" method="post">
-	        <select name="searchtype" id="searchtype">
-	            <option value="pname" checked>상품명</option>
-	            <option value="pcompa">제조회사명</option>
-	            <option value="pcontent">내용으로검색하기</option>
-	        </select>
 	        <input type="text" size="20" name="searchword" id="searchword" >
 	        <button onclick="return searchFun()">검 색</button> &nbsp;	        
 	    </form>		
-
  	</div>		
  	
 	<table class="table table-sm table-bordered">

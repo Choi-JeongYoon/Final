@@ -35,6 +35,8 @@
 <meta content="width=1200" name="viewport" />
 <link rel="shortcut icon"
 	href="/resources/img/8651574782_7d7d5261-303c-4a51-b4f2-1d6be0844973.png" />
+
+<!-- 메인 , 회원가입 , 로그인 , 헤더 , 푸터 -->
 <link rel="stylesheet" type="text/css"
 	href="/resources/css/headerandfooter.css" />
 <link rel="stylesheet" type="text/css"
@@ -42,6 +44,25 @@
 <link rel="stylesheet" type="text/css"
 	href="/resources/css/headerandfooter3.css" />
 <link href="/resources/css/style.css" type="text/css" rel="stylesheet">
+
+<!-- 목록 프로덕트 리스트  -->
+<!-- <link rel="stylesheet" type="text/css" -->
+<!-- 	href="/resources/css/produclist1.css" /> -->
+<!-- <link rel="stylesheet" type="text/css" -->
+<!-- 	href="/resources/css/produclist2.css" /> -->
+<!-- <link rel="stylesheet" type="text/css" -->
+<!-- 	href="/resources/css/produclist3.css" /> -->
+<!-- <link rel="stylesheet" type="text/css" -->
+<!-- 	href="/resources/css/produclist4.css" /> -->
+<!-- <link rel="stylesheet" type="text/css" -->
+<!-- 	href="/resources/css/produclist5.css" /> -->
+<!-- <link rel="stylesheet" type="text/css" -->
+<!-- 	href="/resources/css/produclist6.css" /> -->
+<!-- <link rel="stylesheet" type="text/css" -->
+<!-- 	href="/resources/css/produclist7.css" /> -->
+<!-- 	<link rel="stylesheet" type="text/css" -->
+<!-- 	href="/resources/css/produclist8.css" /> -->
+
 <script src="/resources/js/jquery-3.6.3.min.js" type="text/javascript"></script>
 <script src="/resources/js/jQuery.js" type="text/javascript"></script>
 <script type="text/javascript"
@@ -83,26 +104,37 @@
 
 
 	<div class="main-header__search">
-		<div class="search">
-			<form id="srchFRM_TOP" name="srchFRM_TOP" style="margin: 0px;"
-				method="GET" action="//search.danawa.com/dsearch.php"
-				data-gtm-form-interact-id="0">
-				<fieldset>
+<!-- 		<div class="search"> -->
+<!-- 			<form id="srchFRM_TOP" name="srchFRM_TOP" style="margin: 0px;" -->
+<!-- 				method="GET" action="//search.danawa.com/dsearch.php" -->
+<!-- 				data-gtm-form-interact-id="0"> -->
+<!-- 				<fieldset> -->
 					<legend class="blind">통합 검색</legend>
+					<!-- 					<div class="search__box search_area_content"> -->
+					<!-- 						<input type="text" class="search__input" name="k1" id="AKCSearch" -->
+					<!-- 							autocomplete="off" placeholder="검색어를 입력해주세요." title="검색어 입력" -->
+					<!-- 							value="" data-gtm-form-interact-field-id="0"> <input -->
+					<!-- 							id="module" name="module" value="goods" type="hidden"> <input -->
+					<!-- 							id="act" name="act" value="dispMain" type="hidden"> -->
+					<!-- 						<button type="submit" class="search__submit"> -->
+					<!-- 							<span class="blind">검색</span> -->
+					<!-- 						</button> -->
+					<!-- 					</div> -->
+
 					<div class="search__box search_area_content">
-						<input type="text" class="search__input" name="k1" id="AKCSearch"
-							autocomplete="off" placeholder="검색어를 입력해주세요." title="검색어 입력"
-							value="" data-gtm-form-interact-field-id="0"> <input
-							id="module" name="module" value="goods" type="hidden"> <input
-							id="act" name="act" value="dispMain" type="hidden">
-						<button type="submit" class="search__submit">
-							<span class="blind">검색</span>
-						</button>
+						<form action="productList" method="post">
+							<input type="text" size="20" name="searchword" id="searchword">
+							<button type="submit" class="search__submit"
+								onclick="return searchFun()">검 색</button>
+							&nbsp;
+						</form>
 					</div>
-					<div style="display: none" id="searchBoxHidden">
-						<script type="text/javascript"
-							src="//ad.danawa.com/RealMedia/ads/adstream_jx.ads/www.danawa.com/main@x50"></script>
-					</div>
+
+
+<!-- 					<div style="display: none" id="searchBoxHidden"> -->
+<!-- 						<script type="text/javascript" -->
+<!-- 							src="//ad.danawa.com/RealMedia/ads/adstream_jx.ads/www.danawa.com/main@x50"></script> -->
+<!-- 					</div> -->
 					<!-- script type="text/javascript">
 						var adv_srch_type = null;
 						var adv_srch_obj = null;
