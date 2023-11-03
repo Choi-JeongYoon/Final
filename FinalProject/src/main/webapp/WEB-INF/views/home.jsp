@@ -271,7 +271,7 @@
 						<ul class="prod-list swiper-slide swiper-slide-active"
 							style="width: 865px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
 							<li class="prod-list__item"><a
-								href="productList?${cate.pname}"
+								href="productView?pnum=131"
 								class="prod-list__link top100ProductClick" target="_blank">
 									<span class="prod-list__thumb"><img
 										src="https://img.danawa.com/prod_img/500000/687/791/img/18791687_1.jpg?shrink=330:*&_v=20230705111010" alt="삼성전자 갤럭시S23 256GB, 자급제 (자급제,공기계)" aria-hidden="true"
@@ -280,10 +280,10 @@
 									class="prod-list__price"><span class="num">1,141,640</span>원</span>
 							</a></li>
 							<li class="prod-list__item"><a
-								href="https://prod.danawa.com/info/?pcode=27506834"
+								href="productView?pnum=33"
 								class="prod-list__link top100ProductClick" target="_blank">
 									<span class="prod-list__thumb"><img
-										src="//img.danawa.com/prod_img/500000/834/506/img/27506834_1.jpg?shrink=130:130"
+										src="https://img.danawa.com/prod_img/500000/834/506/img/27506834_1.jpg?shrink=330:*&_v=20230817124241"
 										alt="파워윈 맥세이프 블리자드 3in1 고속 무선충전거치대" aria-hidden="true"
 										class="swiper-lazy swiper-lazy-loaded"></span> <span
 									class="prod-list__txt">파워윈 맥세이프 블리자드 3in1 고속 무선충전거치대</span> <span
