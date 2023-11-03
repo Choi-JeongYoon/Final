@@ -9,6 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.ezen.biz.dao.ProductDAO;
+import com.ezen.biz.dto.McateInfo;
 import com.ezen.biz.dto.ProductVO;
 import com.ezen.biz.utils.Criteria;
 
@@ -20,9 +21,17 @@ import lombok.extern.log4j.Log4j;
 public class ProductTest {
 	@Autowired
 	private ProductDAO dao;
+	
 	@Test
 	public void insertProductTest() {
-	
+		ProductVO vo=new ProductVO();
+		vo.setPnum(67);
+		vo.setPtype1("데스크탑·서버");
+		vo.setPtype2("프리미엄PC");
+		vo.setPname("호호");
+		vo.setUseitem("Y");
+		dao.insertProduct(vo);
+		log.info(vo);
 	}
 	
 	@Test 
@@ -31,6 +40,21 @@ public class ProductTest {
 		List<ProductVO> list=dao.selectProductList(cri);
 		log.info(list);
 	}
+	
+	@Test
+	public void selectProductListPaging() {
+		Criteria cri=new Criteria();
+		List<ProductVO> list=dao.selectProductListPaging(cri);
+		for(ProductVO vo:list)
+			log.info(vo);
+		log.info("---------------------------------");
+		cri.setPtype1("데스크탑·서버");
+		cri.setPtype2("프리미엄PC");
+		list=dao.selectProductListPaging(cri);
+		for(ProductVO vo:list)
+			log.info(vo);
+	};
+	
 	@Test
 	public void selectRowCountTest() {
 		int n=dao.selectRowCount();
@@ -64,8 +88,15 @@ public class ProductTest {
 		log.info(vo);
 	}
 	
+	
+	
 	@Test
 	public void deleteProduct() {
 		
+	}
+	@Test
+	public void selectProductMenu() {
+		List<McateInfo> list=dao.selectProductMenu();
+		log.info(list);
 	}
 }

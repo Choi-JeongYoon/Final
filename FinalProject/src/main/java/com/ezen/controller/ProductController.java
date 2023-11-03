@@ -26,11 +26,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ezen.biz.dto.McateInfo;
-import com.ezen.biz.dto.McateVO;
 import com.ezen.biz.dto.PriceVO;
 import com.ezen.biz.dto.ProductVO;
 import com.ezen.biz.dto.ScateInfo;
-import com.ezen.biz.service.CateService;
 import com.ezen.biz.service.ProductService;
 import com.ezen.biz.service.ProductServiceImpl;
 import com.ezen.biz.utils.Criteria;
@@ -45,41 +43,64 @@ public class ProductController {
 	private ProductService service;
 	@Autowired
 	private com.ezen.biz.service.PriceService priceService;
-	@Autowired
-	private CateService CateService;
 	
 	
 	private final String imgPath="C:/final/pimg/";
 	
 	
 	@RequestMapping(value = "productList")
-	public String selectProductList(Model model,Criteria cri,String subcategory) {
-		List<ProductVO> list=service.selectProductList(subcategory);
+	public String selectProductList(Model model,Criteria cri,ProductVO vo) {
+		//페이징검색전에 페이지설정
+		//1. cri안에있는 pagenum을 출력
+		log.info(cri);
+		List<ProductVO> list=service.selectProductListPaging(cri);
 		model.addAttribute("list", list);
+		log.info(list);
 		//PageMaker 객체 생성 : 
 		int cnt=service.selectRowCount(cri);
 		PageMaker maker=new PageMaker(cri, cnt);
 		model.addAttribute("pmaker", maker);
+		
 		return "product/productList";
 	}
+
 	
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {	
-		log.info("dfdsfa");
-		List<McateVO> list=CateService.selectCate();
+		List<McateInfo> list=service.selectProductMenu();
 		log.info(list);
 		model.addAttribute("list", list);
-		
 		//List<ScateVO> sCate=service.
 		return "home";
 	}
+	
+	// 제품 입력시 : 카테고리선택(카테고리를 제품 테이블에 같이 넣어놓은 경우)
+		// mainCategory는 /나 공백을 포함하면 안됨
+		@GetMapping("cateProductInput")
+		public String cateProductInputGet(Model model) {
+			List<McateInfo> mCate=service.selectProductMCateList();
+			model.addAttribute("mCate", mCate);
+			List<ScateInfo> sCate=service.selectProductSCateList();
+			model.addAttribute("sCate", sCate);
+			return "cateProductInput";
+		}
+		// 카테고리 메뉴 보여주기
+		@GetMapping("cateProductView")
+		public String cateProductView(Model model) {
+			List<McateInfo> list=service.selectProductMenu();
+			log.info(list);
+			model.addAttribute("list", list);
+			
+			return "cateProductView";
+		}
+	
 	
 	@GetMapping("productView")
 	public String productView(Model model,Criteria cri,ProductVO vo) {
 		//productView.jsp 에서 필요한 데이터를 검색해서 model에 담아서 
 		log.info("vo====="+vo);
-		vo=service.selectProduct(vo); //도서상세 조회
+		vo=service.selectProduct(vo); //제품상세 조회
 		model.addAttribute("product",vo);
 		model.addAttribute("cri", cri);
 		log.info("vo.getPnum()="+vo.getPnum());
@@ -126,20 +147,21 @@ public class ProductController {
 			out.close();
 		}
 	//상품 등록
+		// 제품 입력시 : 카테고리선택(카테고리를 제품 테이블에 같이 넣어놓은 경우)
+		// mainCategory는 /나 공백을 포함하면 안됨
 	@GetMapping("productNew")
-	public String productNew(Model model) {
-		List<McateInfo> mCate=CateService.selectProductMCateList();
-		model.addAttribute("mCate", mCate);
-		
-		List<ScateInfo> sCate=CateService.selectProductSCateList();
-		model.addAttribute("sCate", sCate);
-		return "product/productNew";
-	}
+		public String productNew(Model model) {
+			List<McateInfo> mCate=service.selectProductMCateList();
+			model.addAttribute("mCate", mCate);
+			List<ScateInfo> sCate=service.selectProductSCateList();
+			model.addAttribute("sCate", sCate);
+			return "product/productNew";
+		}
 	@PostMapping("productNew")
-	public String productNew(MultipartFile[] uploadFile, ProductVO vo ,Model model, @RequestParam String mCate) {
+	public String productNew(MultipartFile[] uploadFile, ProductVO vo ,Model model) {
 		int cnt = 0;
 		log.info("전----:"+vo);
-		vo.setPtype1(mCate);
+		//vo.setPtype1(mCate);
 		log.info("후ㅡ----:"+vo);
 		for (MultipartFile multipartFile : uploadFile) {
 

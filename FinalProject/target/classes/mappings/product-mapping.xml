@@ -3,6 +3,13 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="ProductDAO">
+  <resultMap type="com.ezen.biz.dto.ScateInfo" id="scateInfoMap">
+   		<result property="ptype2" column="ptype2"/>
+   </resultMap>
+   <resultMap type="com.ezen.biz.dto.McateInfo" id="productMenuMap">
+   		<result property="ptype1" column="ptype1"/>
+   		<collection property="ptype2" resultMap="scateInfoMap"/>
+   </resultMap>
 	<insert id="insertProduct" parameterType="product">
 		insert into
 		product(pnum,ptype1,ptype2,pname,pcompa,pcontent,pimg1,pimg2,psavimg)
@@ -23,12 +30,22 @@
 		select rownum rn, A.* from
 		(select
 		pnum,ptype1,ptype2,pname,pcompa,pcontent,preg from product where 1=1
-		<if test="searchtype=='ptype1'">
-			and ptype1 like '%' || #{searchword} ||'%'
-		</if>
-		<if test="searchtype=='ptype2'">
-			and ptype2 like '%' || #{searchword} ||'%'
-		</if>
+		<choose>
+		    <when test="ptype1 != null">
+		      	AND ptype1= #{ptype1}
+		    </when>
+			<otherwise>
+	      		AND ptype1 is not null 
+		    </otherwise>
+	   </choose>
+	   		<choose>
+		    <when test="ptype2 != null">
+		      	AND ptype2= #{ptype2}
+		    </when>
+			<otherwise>
+	      		AND ptype2 is not null 
+		    </otherwise>
+	   </choose>
 		<if test="searchtype=='pname'">
 			and pname like '%' || #{searchword} ||'%'
 		</if>
@@ -51,7 +68,23 @@
 	</select>
 	<!-- 검색조건에 해당하는 개수 가져오기 -->
 	<select id="selectRowCountPaging" resultType="java.lang.Integer">
-		select count(*) from product where 1=1
+	select count(*) from product where 1=1
+		<choose>
+		    <when test="ptype1 != null">
+		      	AND ptype1= #{ptype1}
+		    </when>
+			<otherwise>
+	      		AND ptype1 is not null 
+		    </otherwise>
+	   </choose>
+	   		<choose>
+		    <when test="ptype2 != null">
+		      	AND ptype2= #{ptype2}
+		    </when>
+			<otherwise>
+	      		AND ptype2 is not null 
+		    </otherwise>
+	   </choose>
 		<if test="searchtype=='pname'">
 			and pname like '%' || #{searchword} ||'%'
 		</if>
@@ -81,5 +114,25 @@
 	<update id="deleteProduct" parameterType="product">
 		update product set useitem='N' where pnum=#{pnum}
 	</update>
-	
+	<select id="selectProductMCateList" resultType="com.ezen.biz.dto.McateInfo">
+	   	select DISTINCT ptype1 
+		from product
+		order by ptype1
+   </select>
+   <select id="selectProductSCateList" resultType="com.ezen.biz.dto.ScateInfo">
+		select DISTINCT ptype1,ptype2
+		from product
+		order by ptype1,ptype2
+   </select>
+   <select id="selectProductMenu" resultMap="productMenuMap">
+   		select p1.ptype1,p2.ptype2 from 
+	    	(select DISTINCT ptype1
+			from product )p1 
+			,product p2
+		where p1.ptype1=p2.ptype1
+		order by ptype1,ptype2
+   </select>
+   
 </mapper>
+
+

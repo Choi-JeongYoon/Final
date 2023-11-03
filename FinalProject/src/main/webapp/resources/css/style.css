@@ -1,90 +1,113 @@
 @charset "utf-8";
 /*  리셋스타일  */
-*{margin:0; padding:0;}
-ul li{list-style:none;}
-a:link{text-decoration:none;}
+* {
+	margin: 0;
+	padding: 0;
+}
 
-body{ font-family : 나눔고딕;
-      color:#222328;
-      background-color: #fff;
-	  }
-	  
+ul li {
+	list-style: none;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+body {
+	font-family: 나눔고딕;
+	color: #222328;
+	background-color: #fff;
+}
+
 /* 헤더 */
-#wrap{width:1200px; margin: 0 auto; }
-.head{  height:100px;}
-.logo{
-	float:left; width:250px; height:100px;
-	overflow:hidden;
+#wrap {
+	width: 230px;
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.head {
+	height: 100px;
+}
+
+.logo {
+	float: left;
+	width: 250px;
+	height: 100px;
+	overflow: hidden;
 	background-color: lime;
 }
 
-.logo img{
-	 margin-top:30px; margin-left:30px; /* 추가 */
+.logo img {
+	margin-top: 30px;
+	margin-left: 30px; /* 추가 */
 }
 
 /* 네비게이션(메뉴) */
-.navi_box{
-    float:clear; 
-	width:300px; height:1000px;	
-	background:#ddd;
-	
+.navi_box {
+	width: 230px;
+	height: 280px;
+	background: #ddd;
+	position: relative;
+	z-index: 9;
 }
 
-.navi_box > ul{
-	display:inline-block; float:left;
+.navi_box>ul {
+	display: inline-block;
+	float: left;
 }
 
-.navi_box > ul > li{
-	display:inline-block;
-	position:relative;
-	width: 195px; height:50px;
-	text-align:center;
+.navi_box>ul>li {
+	display: inline-block;
+	position: relative;
+	width: 195px;
+	height: 50px;
+	text-align: center;
 }
 
-.navi_box > ul > li > a{
-	display:block; line-height:50px;
-	font-size:18px;
-	font-weight : bold;
-	text-align:center;
-	color:#000;
-	transition : all 1s;
+.navi_box>ul>li>a {
+	display: block;
+	line-height: 50px;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	color: #000;
+	transition: all 1s;
 }
 
-.navi_box > ul > li:hover > a{
-	background:#009688; 
-	transition : all 1s;
-	color:#fff;
+.navi_box>ul>li:hover>a {
+	background: #009688;
+	transition: all 1s;
+	color: #fff;
 }
 
-.sub{
-	position:absolute;
+.sub {
+	position: absolute;
 	left: 195px;
-	top:0px;
-	height:180px;
-	background:#efefef;
+	top: 0px;
+	height: 180px;
+	background: #efefef;
 	padding: 10px 0;
-	display:none;
-	z-index:1;
+	display: none;
+	z-index: 1;
 }
 
-.sub > li{
-	width:195px; height:40px;	
+.sub>li {
+	width: 195px;
+	height: 40px;
 }
 
-.sub > li > a{
-	display:block;
-	font-size:15px;
-	color:#000;
-	background:#efefef;
-	line-height:40px;
-	transition : all 1s;
+.sub>li>a {
+	display: block;
+	font-size: 15px;
+	color: #000;
+	background: #efefef;
+	line-height: 40px;
+	transition: all 1s;
 }
 
-.sub > li:hover> a{	
-	background:#ccc;
-	font-weight:bold;
-	transition : all 1s;
+.sub>li:hover>a {
+	background: #ccc;
+	font-weight: bold;
+	transition: all 1s;
 }
-
-
-

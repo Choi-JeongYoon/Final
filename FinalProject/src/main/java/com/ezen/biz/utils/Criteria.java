@@ -14,11 +14,12 @@ public class Criteria {
     // 검색어
     private String searchword;
     private String searchtype;
+    
+    private String ptype1,ptype2;
 	
 	// 생성자
 	// 기본값: 페이지번호=1, 게시글의수=10
-	public Criteria() {
-		
+	public Criteria() {		
 		this(1, 10,"pname","");
 	}		
 	
@@ -27,10 +28,28 @@ public class Criteria {
 		this.rowsPerPage = rowsPerPage;
 		this.searchtype=searchtype;
 		this.searchword=searchword;
+		this.ptype1=null;
+		this.ptype2=null;
 	}
 
 	
 	
+	public String getPtype1() {
+		return ptype1;
+	}
+
+	public void setPtype1(String ptype1) {
+		this.ptype1 = ptype1;
+	}
+
+	public String getPtype2() {
+		return ptype2;
+	}
+
+	public void setPtype2(String ptype2) {
+		this.ptype2 = ptype2;
+	}
+
 	public String getSearchword() {
 		return searchword;
 	}
@@ -77,8 +96,10 @@ public class Criteria {
 
 	@Override
 	public String toString() {
-		return "Criteria [pageNum=" + pageNum + ", rowsPerPage=" + rowsPerPage + ", searchword=" + searchword
-				+ ", searchtype=" + searchtype + "]";
+		return "Criteria ==== [pageNum=" + pageNum + ", rowsPerPage=" + rowsPerPage + ", searchword=" + searchword
+				+ ", searchtype=" + searchtype + ", ptype1=" + ptype1 + ", ptype2=" + ptype2 + "]";
 	}
+
+
 
 }

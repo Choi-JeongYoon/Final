@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ezen.biz.dao.ProductDAO;
+import com.ezen.biz.dto.McateInfo;
 import com.ezen.biz.dto.ProductVO;
+import com.ezen.biz.dto.ScateInfo;
 import com.ezen.biz.utils.Criteria;
 @Service
 public class ProductServiceImpl implements ProductService{
@@ -20,18 +22,33 @@ public class ProductServiceImpl implements ProductService{
 		return dao.selectproductList(subcategory);
 	}
 
-	public int selectRowCount() {
-		return dao.selectRowCount();
-	}
-
 	public List<ProductVO> selectProductList(Criteria cri) {
 		return dao.selectProductList(cri);
 	}
 
+	
+	public List<ProductVO> selectProductListPaging(Criteria cri){
+		return dao.selectProductListPaging(cri);
+	}
+
+
+	public int selectRowCount() {
+		return dao.selectRowCount();
+	}
+
+	
 	public int selectRowCount(Criteria cri) {
 		return dao.selectRowCount(cri);
 	}
 
+	public int selectRowCountPaging(Criteria cri){
+		return dao.selectRowCountPaging(cri);
+	}
+
+	public List<ProductVO> selectProductList() {
+		return null;
+	}
+	
 	public ProductVO selectProduct(ProductVO vo) {
 		return dao.selectProduct(vo);
 	}
@@ -44,7 +61,18 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 	@Override
-	public List<ProductVO> selectProductList() {
-		return null;
+	public List<McateInfo> selectProductMCateList() {
+		return dao.selectProductMCateList();
 	}
+	@Override
+	public List<ScateInfo> selectProductSCateList() {
+		return dao.selectProductSCateList();
+	}
+	@Override
+	public List<McateInfo> selectProductMenu() {
+		return dao.selectProductMenu();
+	}
+
+
+	
 }

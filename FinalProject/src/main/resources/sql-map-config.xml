@@ -16,7 +16,6 @@
  	<typeAlias type="com.ezen.biz.utils.Criteria" alias="criteria" />
  </typeAliases>
   <mappers>
-    <mapper resource="mappings/cate-mapping.xml"/>
     <mapper resource="mappings/product-mapping.xml"/>
     <mapper resource="mappings/member-mapping.xml"/>
     <mapper resource="mappings/price-mapping.xml"/>

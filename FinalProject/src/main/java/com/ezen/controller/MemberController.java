@@ -9,8 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ezen.biz.dto.BoardVO;
 import com.ezen.biz.dto.MemberVO;
@@ -81,4 +79,9 @@ public class MemberController {
 	   public String home(BoardVO bvo) {
 	      return "home";
 	   }
+	
+	@GetMapping("terms")
+	public String terms(BoardVO vo) {
+		return "terms";
+	}
 }

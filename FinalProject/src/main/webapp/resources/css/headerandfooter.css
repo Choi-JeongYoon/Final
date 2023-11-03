@@ -2642,8 +2642,7 @@ input[type=text], input[type=search], textarea {
 /* 쇼핑정보 , 주요이슈 카테고리   */
 .main-info {
   position: relative;
-  margin-top: 29px;
-  z-index: 20;
+  z-index: 1;
   display: inline-block;
   width: 800px;
   margin-left: 75px;

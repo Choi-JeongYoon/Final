@@ -11,8 +11,8 @@
 		<table class="table table-sm table-bordered">
 		<tr>
 			<td>
-				<label for="ptype1">메인카테고리</label>
-				  <select name="mCate" id="mCate" onchange="subCateChange()">
+				<label for="mCate">메인카테고리</label>
+				  <select name="ptype1" id="mCate" onchange="subCateChange()">
 				  	<c:forEach items="${mCate}" var="m">
 				    <option value="${m.ptype1}">${m.ptype1}</option>
 				    </c:forEach>
@@ -23,7 +23,7 @@
 				  <select name="ptype2" id="sCate">
 				  </select> 				
 				  
-				 <div style="display:none"> 
+					<div style="display:none">
 
 				  	<c:forEach items="${sCate}" var="s">
 				     	<div class="item${s.ptype1} ${s.ptype2}">${s.ptype2}:${s.ptype1}</div>
@@ -83,7 +83,7 @@
 	    
 	    subCateChange();
 	});
-	//subcatechange
+
 	function subCateChange(){
 		
 		console.log($("#mCate").val());
@@ -98,7 +98,7 @@
 		
 		for(i of opt){
 			j = $(i).html().split(":");
-			console.log(j);
+			
 			
 			html += '<option value="'+j[0]+'">'+j[0]+'</option>';
 		}

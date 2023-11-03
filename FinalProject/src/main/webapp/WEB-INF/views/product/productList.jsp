@@ -36,8 +36,9 @@
 	<div id="top-button">
 		<c:if test="${sessionScope.role=='ADMIN'}">
 			<a href="productNew"><button type="button" class="btn btn-primary">상품등록</button></a>
-			
 		</c:if>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="productList"><button type="button" class="btn btn-primary">전체목록보기</button></a>
 	</div>
 	
 	      <!--  검색 -->
@@ -85,13 +86,12 @@
 		</c:forEach>
 	 </table>
 	 
-	 <div id="pagediv">
-		 <!-- 페이지 -->	 
-	     <nav aria-label="Standard pagination example">
-	          <ul class="pagination">
-		         <c:if test="${pmaker.prev}">
+	   <div id="pagediv">
+                    <nav aria-label="Standard pagination example">
+                      <ul class="pagination">
+                        <c:if test="${pmaker.prev}">
 		            <li class="page-item">
-<a class="page-link" href="productList?pageNum=${pmaker.beginPage-1}&searchword=${pVo.searchword}&searchtype=${pVo.searchtype}" aria-label="Previous">이전</a>
+		              <a class="page-link" href="productList?pageNum=${pmaker.beginPage-1}&searchword=${pVo.searchword}&searchtype=${pVo.searchtype}" aria-label="Previous">
 		                <span aria-hidden="true">&laquo;</span>
 		              </a>
 		            </li>   
@@ -109,9 +109,9 @@
 		              </a>
 		            </li>
 	            </c:if>
-	          </ul>
-	    </nav><!-- paging end -->
-    </div>
+                      </ul>
+                    </nav>
+                  </div><!-- paging end -->
   
  </main>
 
