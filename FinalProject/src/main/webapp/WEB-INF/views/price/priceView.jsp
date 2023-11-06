@@ -18,7 +18,6 @@ td {
 }
 </style>
 <main>
-	<h2>가격 상세</h2>
 	<form action="priceUpdate" method="post"
 		enctype="multipart/form-data" id="uploadForm" name="uploadForm">
 		<input type="hidden" value="${price.pinum}" name="pinum" id="pinum">
@@ -36,7 +35,7 @@ td {
 				<th>가격입력</th>
 				<td class="disp">${price.price}</td>
 				<td class="edit" style="display: none;"><input type="text"
-					size="120" maxlength="30" name="price"
+					size="150" maxlength="30" name="price"
 					value="${price.price}" id="price" placeholder="가격">
 				</td>
 			</tr>

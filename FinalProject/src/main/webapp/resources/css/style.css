@@ -16,7 +16,7 @@ a:link {
 body {
 	font-family: 나눔고딕;
 	color: #222328;
-	background-color: #fff;
+	background-color: #FBEFF2;
 }
 
 /* 헤더 */
@@ -47,16 +47,20 @@ body {
 .navi_box {
 	width: 230px;
 	height: 280px;
-	background: #ddd;
+	background: #2070eb;
 	position: relative;
 	z-index: 9;
+	border-radius: 15px;
+	margin-left: 5px;
 }
 
 .navi_box>ul {
 	display: inline-block;
 	float: left;
+	background-color: #2070eb;
 }
 
+}
 .navi_box>ul>li {
 	display: inline-block;
 	position: relative;
@@ -71,8 +75,9 @@ body {
 	font-size: 18px;
 	font-weight: bold;
 	text-align: center;
-	color: #000;
+	color: #e6effd;
 	transition: all 1s;
+	margin-left: 15px;
 }
 
 .navi_box>ul>li:hover>a {
@@ -85,11 +90,12 @@ body {
 	position: absolute;
 	left: 195px;
 	top: 0px;
-	height: 180px;
-	background: #efefef;
+	background: #E0ECF8;
 	padding: 10px 0;
 	display: none;
 	z-index: 1;
+	border-radius: 7px;
+	margin-left: 10px;
 }
 
 .sub>li {
@@ -101,9 +107,11 @@ body {
 	display: block;
 	font-size: 15px;
 	color: #000;
-	background: #efefef;
+	background: #E0F8F7;
 	line-height: 40px;
 	transition: all 1s;
+	border-radius: 3px;
+	margin-left: 5px;
 }
 
 .sub>li:hover>a {
@@ -129,6 +137,14 @@ body {
 	padding-top: 8px;
 }
 
+.topproducimg3 {
+/* 	width: 60px; */
+	height: 60px;
+/* 	display: inline-block; */
+	margin-right: 50px;
+	padding-top: 8px;
+}
+
 .snip1535 {
 	background-color: #F2FBEF;
 	border: none;
@@ -145,6 +161,7 @@ body {
 	position: relative;
 	text-transform: uppercase;
 	font-weight: 700;
+	border-radius: 7px;
 }
 
 .snip1535:before, .snip1535:after {

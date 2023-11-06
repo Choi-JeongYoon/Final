@@ -67,20 +67,11 @@
 				페이지</button></a>
 	</div>
 
-	<!--  검색 -->
-	<div id="searchdiv">
-		<form action="productList" method="post">
-			<input type="text" size="20" name="searchword" id="searchword">
-			<button onclick="return searchFun()">검 색</button>
-			&nbsp;
-		</form>
-	</div>
-
 	<table class="table table-sm table-bordered">
 		<tr>
 			<th>order</th>
 			<th>제품번호</th>
-			<th>메인카테1</th>
+			<th>메인카테</th>
 			<th>서브카테</th>
 			<th>상품명</th>
 			<th>제조회사</th>
