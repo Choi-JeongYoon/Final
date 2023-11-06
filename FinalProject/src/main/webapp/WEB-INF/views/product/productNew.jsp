@@ -7,20 +7,21 @@
 
 <main>
 	<h2>상품 등록</h2>
-
+<form action="productNew" method="post" id="uploadForm"
+		enctype="multipart/form-data">
+		
 	<c:if test="${sessionScope.role=='ADMIN'}">
 		<div class="btn">
 			<img class="topproducimg1" alt="상품 등록"
 				src="/resources/img/istockphoto-1193039142-170x170-removebg-preview.png">
-			<button type="submit" class="snip1535">상품 등록</button>
-			&nbsp; <img class="topproducimg1" alt="원래 대로"
+		<button type="submit" class="snip1535">	상품 등록</button>
+			&nbsp; 
+			<img class="topproducimg1" alt="원래 대로"
 				src="/resources/img/settings_options_configuration_setting_system_icon_196481.png">
 			<button type="reset" class="snip1535">다시 입력</button>
 		</div>
 	</c:if>
-
-	<form action="productNew" method="post" id="uploadForm"
-		enctype="multipart/form-data">
+	
 		<table class="table table-sm table-bordered">
 			<tr>
 				<td><label for="mCate">메인카테고리</label> <select name="ptype1"
