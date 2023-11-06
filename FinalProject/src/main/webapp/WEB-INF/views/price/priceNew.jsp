@@ -10,7 +10,6 @@
 }
 </style>
 <main>
-	<h2>상품가격 등록</h2>
 	<form action="priceNew" method="post" id="uploadForm"
 		enctype="multipart/form-data">
 		<input type="hidden" name="pnum" value="${pnum}">

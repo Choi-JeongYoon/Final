@@ -14,7 +14,6 @@
 	}
 </style>
 <main>
-	<h2>가격 목록</h2>
 <div id="top-button">
 		<c:if test="${sessionScope.role=='ADMIN'}">
 			<a href="priceNew?pnum=${pnum}"><button type="button" class="btn btn-primary">가격등록</button></a>

@@ -18,24 +18,58 @@ th {
 td {
 	text-align: left;
 }
-
 </style>
 <main>
-	<h2>상품 상세</h2>
-	
-	<c:if test="${sessionScope.role=='ADMIN'}">
-			<a href="priceList?pnum=${product.pnum}"><button type="button" class="btn btn-primary">가격등록/삭제/수정/admin</button></a>
-			</c:if>
-			
+
+	<div class="btn_rud">
+
+		<button type="button"
+			onclick="location.href='productList?pageNum=${cri.pageNum}&searchword=${cri.searchword}&searchtype=${cri.searchtype}'"
+			class="btn btn-success">
+			<img class="topproducimg3" alt="전체 목록"
+				src="/resources/img/hamburger_menu_navbar_options_icon_196495.png">
+		</button>
+
+		<c:if test="${sessionScope.role=='ADMIN'}">
+			<img class="topproducimg1" alt="가격 등록"
+				src="/resources/img/special_price_discount_icon_134617.png">
+			<a href="priceList?pnum=${product.pnum}"><button type="button"
+					class="snip1535">가격 등록</button></a>
+		</c:if>
+
+		<c:if test="${sessionScope.role=='ADMIN'}">
+			<img class="topproducimg1" alt="상품 수정"
+				src="/resources/img/edit_clear_all_icon_180807.png">
+			<button type="button" class="snip1535" id="btnEdit"
+				onclick="productEdit()">상품 수정</button>
+
+			<img class="topproducimg1" alt="상품 등록"
+				src="/resources/img/bin_trash_rubbish_dustbin_remove_icon_196490.png">
+			<button type="button" class="snip1535" id="btnDelete"
+				onclick="productDelete()">상품 삭제</button>
+
+			<img class="topproducimg1" alt="상품 저장"
+				src="/resources/img/savetheapplication_guardar_2958.png">
+			<button type="submit" class="snip1535" id="btnSave"
+				onclick="productSave()">상품 저장</button>
+
+			<img class="topproducimg1" alt="원래 대로"
+				src="/resources/img/settings_options_configuration_setting_system_icon_196481.png">
+			<button type="reset" class="snip1535" id="btnCancle"
+				onclick="productCancle()">다시 입력</button>
+		</c:if>
+	</div>
+	<br>
+
 	<form action="productUpdate" method="post"
 		enctype="multipart/form-data" id="uploadForm" name="uploadForm">
 		<input type="hidden" value="${product.pnum}" name="pnum" id="pnum">
 		<input type="hidden" value="${product.filename}" name="filename">
-		<input type="hidden" value="${cri.pageNum}" name="pageNum">
-		<input type="hidden" value="${cri.searchtype}" name="searchtype"> 
-	    <input type="hidden" value="${cri.searchword}" name="searchword">
+		<input type="hidden" value="${cri.pageNum}" name="pageNum"> <input
+			type="hidden" value="${cri.searchtype}" name="searchtype"> <input
+			type="hidden" value="${cri.searchword}" name="searchword">
 		<table class="table table-sm table-bordered">
-	
+
 			<tr>
 				<th>상품제목</th>
 				<td class="disp">${product.pname}</td>
@@ -54,9 +88,9 @@ td {
 			<tr>
 				<th>상품 이미지</th>
 				<td class="disp"><c:if test="${product.pimg1!=null}">
-						<img src="imgDown?filename=${product.pimg1}" alt="" height="200px">
+						<img src="imgDown?filename=${product.pimg1}">
 					</c:if> <c:if test="${product.pimg2!=null}">
-						<img src="imgDown?filename=${product.pimg2}" alt="" height="200px">
+						<img src="imgDown?filename=${product.pimg2}">
 					</c:if></td>
 				<td class="edit" style="display: none;">
 					<div>
@@ -66,23 +100,22 @@ td {
 						<c:if test="${product.pimg2!=null}">
 							${originFilename}	<!-- 기존 파일명 :  -->
 						</c:if>
-					</div> 
-					
-					<br>
-					
+					</div> <br>
+
 					<div class="form-group row">
-					<c:if test="${sessionScope.role=='ADMIN'}">
-						<label for="file" class="col-sm-2 col-form-label"></label> <!-- 파일첨부 -->
-						<div class="col-sm-10">
-							<input type="file" name="uploadFile" id="pimg1" accept="image/*"
-								onchange="uploadFileCheck()" multiple> <small
-								class="text-muted">(파일크기 : 10MB / 이미지 파일만 가능)</small> <small
-								id="file" class="text-info"></small><br> <input type="file"
-								name="uploadFile" id="pimg2" accept="image/*"
-								onchange="uploadFileCheck()" multiple> <small
-								class="text-muted">(파일크기 : 10MB / 이미지 파일만 가능)</small> <small
-								id="file" class="text-info"></small><br>
-						</div>
+						<c:if test="${sessionScope.role=='ADMIN'}">
+							<label for="file" class="col-sm-2 col-form-label"></label>
+							<!-- 파일첨부 -->
+							<div class="col-sm-10">
+								<input type="file" name="uploadFile" id="pimg1" accept="image/*"
+									onchange="uploadFileCheck()" multiple> <small
+									class="text-muted">(파일크기 : 10MB / 이미지 파일만 가능)</small> <small
+									id="file" class="text-info"></small><br> <input
+									type="file" name="uploadFile" id="pimg2" accept="image/*"
+									onchange="uploadFileCheck()" multiple> <small
+									class="text-muted">(파일크기 : 10MB / 이미지 파일만 가능)</small> <small
+									id="file" class="text-info"></small><br>
+							</div>
 						</c:if>
 					</div>
 				</td>
@@ -91,53 +124,29 @@ td {
 				<th>내용</th>
 				<td class="disp">${repContent}</td>
 				<td class="edit" style="display: none;"><input type="text"
-					size="120" maxlength="30" name="pcontent"
+					size="120" maxlength="2000" name="pcontent"
 					value="${product.pcontent}" id="pcontent" placeholder="내용">
-					
+
 				</td>
 			</tr>
-			
+
 		</table>
-		</form>
-		<table class="table table-sm table-bordered">
-	<tr>
-		<th>가격</th>
-		<th>판매페이지</th>
-	</tr>
-	<c:forEach items="${list1}" var="price" varStatus="sts">
-		
+	</form>
+	<table class="table table-sm table-bordered">
+		<tr>
+			<th>가격</th>
+			<th>판매페이지</th>
+		</tr>
+		<c:forEach items="${list1}" var="price" varStatus="sts">
+
 			<tr>
 				<td>${price.price}</td>
 				<td>${price.picompa}</td>
 			</tr>
-		
-	</c:forEach>
-</table>
-	 
-		<div class="btn_rud">
-			<button type="button" id="btnList"
-				onclick="location.href='productList?pageNum=${cri.pageNum}&searchword=${cri.searchword}&searchtype=${cri.searchtype}'"
-				class="btn btn-success">상품목록</button>
-			
-			<c:if test="${sessionScope.role=='ADMIN'}">
-				<button type="button" id="btnEdit" onclick="productEdit()"
-					class="btn btn-warning">상품수정</button>
 
-				<button type="button" id="btnDelete" onclick="productDelete()"
-					class="btn btn-danger">상품삭제</button>
+		</c:forEach>
+	</table>
 
-				<button type="submit" id="btnSave" onclick="productSave()"
-					class="btn btn-primary" style="display: none;">상품저장</button>
-
-				<button type="reset" id="btnCancle" onclick="productCancle()"
-					class="btn btn-info" style="display: none;">수정취소</button>
-			</c:if>
-		</div>
-		<br>
-		
-		<div id="top-button">
-	</div>
-	
 </main>
 <script type="text/javascript">
 	/*=============================================
@@ -173,5 +182,6 @@ td {
 		$("#btnSave").css("display", "none");
 		$("#btnCancle").css("display", "none");
 	}
-
 </script>
+
+<%@ include file="../include/footer.jsp"%>
