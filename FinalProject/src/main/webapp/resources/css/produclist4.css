@@ -1,0 +1,1494 @@
+@charset "utf-8";
+
+/* default Selector */
+body, input, button, select, input, h1, h2, h3, h4, h5, h6, img, dl, dt,
+	dd, ul, ol, li, legend, hr, em, div, p, strong, fieldset, form {
+	margin: 0;
+	padding: 0;
+}
+
+body, input, select, input, h1, h2, h3, h4, h5, h6 {
+	font-size: 12px;
+	font-family: "돋움", Dotum, "굴림", gulim, "Apple SD Gothic Neo", Helvetica,
+		Sans-serif;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+html {
+	overflow-y: scroll
+}
+
+body {
+	font-size: 12px;
+	font-family: "돋움", Dotum, "굴림", gulim, Helvetica, "Apple SD Gothic Neo",
+		Sans-serif;
+	text-align: left;
+	background-color: #fff;
+	*word-break: break-all;
+	-ms-word-break: break-all;
+}
+
+/* link */
+a {
+	color: #666;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* Type Selector */
+img {
+	border: 0 none
+}
+
+.scroll_in table {
+	border-spacing: 0 !important;
+	border-collapse: collapse !important;
+	font-family: Dotum, "돋움", "Apple SD Gothic Neo", Helvetica,
+		Sans-serif !important;
+	width: 100% !important;
+	height: auto !important;
+}
+
+.scroll_in table tr, .scroll_in table td {
+	height: 30px !important;
+	-webkit-box-sizing: border-box !important;
+	box-sizing: border-box !important;
+}
+
+.scroll_in table td {
+	color: #333;
+	line-height: 16px;
+	padding: 5px;
+	font-family: Dotum, "돋움", "Apple SD Gothic Neo", Helvetica,
+		Sans-serif !important;
+	border: 1px solid #bfbfbf !important;
+}
+
+.scroll_in table td * {
+	font-family: Dotum, "돋움", "Apple SD Gothic Neo", Helvetica,
+		Sans-serif !important;
+}
+
+.scroll_in p {
+	margin: 0 !important;
+}
+
+.scroll_in img {
+	height: auto !important;
+}
+
+/* layer_pop */
+#layer_pop {
+	position: relative;
+	z-index: 990;
+}
+
+.glossary {
+	border: 2px solid #909090;
+	background: #fff;
+	float: left;
+	width: 425px;
+}
+
+.pop_con_right {
+	border: 1px solid #272a34;
+	float: left;
+	width: 90px;
+}
+
+.pop_title {
+	background: #f4f4f4;
+	height: 30px;
+	overflow: hidden;
+	position: relative;
+	text-align: left;
+}
+
+.pop_title span {
+	color: #666;
+	font-size: 11px;
+	display: block;
+	margin: 10px 0 0 19px;
+}
+
+.btn_close {
+	width: 13px;
+	height: 13px;
+	position: absolute;
+	right: 20px;
+	top: 16px;
+}
+
+.winfo_box {
+	border: 1px solid #eeeded;
+	margin: 31px 0px 0px 0px;
+}
+
+.winfo_box {
+	background: #fbfbfb;
+	padding: 3px 0 1px 0;
+	clear: both;
+	zoom: 1;
+	overflow: hidden;
+}
+
+.winfo_box ul {
+	float: left;
+}
+
+.winfo_box li {
+	font-size: 11px;
+	line-height: 18px;
+	background: url(//img.danawa.com/new/dalgi/img/ico_dot.gif) no-repeat
+		10px 6px;
+	padding-left: 22px;
+	text-align: left;
+	list-style: none;
+}
+
+.winfo_box li strong {
+	font-size: 11px;
+}
+
+.winfo_box .lbox {
+	width: 207px;
+	text-align: left;
+	padding: 0;
+}
+
+.winfo_box .rbox {
+	width: 153px;
+	text-align: left;
+	padding: 0;
+}
+
+.wdate {
+	color: #808080;
+	font-size: 11px;
+}
+
+.top_txt {
+	clear: both;
+	overflow: hidden;
+	height: 20px;
+	vertical-align: top;
+	margin: 20px 0 10px;
+}
+
+.scroll_box {
+	position: relative;
+	width: auto;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.scroll_box .top_txt {
+	margin-right: 84px
+}
+
+.scroll_box .s_tit {
+	color: #000;
+	font-size: 14px;
+	font-weight: bold;
+	float: left;
+}
+
+.scroll_box .s_txt {
+	line-height: 19px;
+	color: #808080;
+	font-size: 12px;
+	clear: both;
+	margin-top: 6px;
+	text-align: left;
+}
+
+.scroll_box .ico_star {
+	float: right;
+}
+
+.scroll_in {
+	margin: 5px 0 0 24px;
+	width: 370px;
+	overflow: hidden;
+	text-align: left;
+	font-family: Dotum, "돋움", "Apple SD Gothic Neo", Helvetica,
+		Sans-serif !important;
+}
+
+.scroll_in a {
+	text-decoration: underline !important;
+}
+
+.scroll_in * {
+	font-size: 12px !important;
+	line-height: 20px !important;
+	font-family: Dotum, "돋움", "Apple SD Gothic Neo", Helvetica,
+		Sans-serif !important;
+}
+
+.scroll_in p {
+	line-height: 18px;
+}
+
+.scroll_in p img {
+	text-align: center !important;
+	max-width: 100%
+}
+
+.tbl_pop1 {
+	border-collapse: collapse;
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.tbl_pop1 th {
+	background: #f6f6f6;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	color: #333;
+	height: 37px;
+	vertical-align: middle;
+	font-weight: normal;
+}
+
+.tbl_pop1 td {
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	padding: 5px 0 3px 0;
+}
+
+.tbl_pop1 td.c_name {
+	text-align: left;
+	padding-left: 9px;
+}
+
+.tbl_pop1 td.co_2 {
+	width: 46px;
+}
+
+.tbl_pop1 td.co_3 {
+	width: 68px;
+}
+
+.tbl_pop1 td.co_4 {
+	width: 41px;
+}
+
+.tbl_pop1 td.co_5 {
+	width: 57px;
+}
+
+.tbl_pop1 td.co_6 {
+	width: 64px;
+}
+
+.btn_pop_center {
+	margin: 14px 0;
+	text-align: center;
+}
+
+.btn_pop_center2 {
+	margin-top: 13px;
+	text-align: center;
+	margin-bottom: 14px;
+}
+
+.btn_blue {
+	background: url(//img.danawa.com/new/dalgi/img/bg_btn_blue.gif) repeat-x
+		left top;
+	height: 17px;
+	color: #eeeded !important;
+	font-weight: bold;
+	text-align: center;
+	display: inline-block;
+	padding-top: 6px;
+	vertical-align: middle;
+	width: 67px;
+}
+
+.btn_blue:hover {
+	color: #eeeded !important;
+	text-decoration: none;
+}
+
+.btn_blue:active {
+	color: #eeeded !important;
+	text-decoration: none;
+}
+
+.btn_white {
+	background: url(//img.danawa.com/new/dalgi/img/bg_btn_line.gif) repeat-x
+		left top;
+	height: 17px;
+	color: #010101 !important;
+	font-weight: bold;
+	text-align: center;
+	display: inline-block;
+	padding-top: 6px;
+	vertical-align: middle;
+	border-left: 1px solid #bebebe;
+	border-right: 1px solid #bebebe;
+	width: 67px;
+}
+
+.btn_white:hover {
+	color: #010101 !important;
+	text-decoration: none;
+}
+
+.btn_white:active {
+	color: #010101 !important;
+	text-decoration: none;
+}
+
+.btn_m1 {
+	width: 86px !important;
+}
+
+.btn_up_arw {
+	background: url(//img.danawa.com/new/dalgi/img/btn_arw_up.gif) #383e4d
+		no-repeat center 8px;
+	width: 90px;
+	display: block;
+	border-bottom: 1px solid #272a34;
+	height: 30px;
+}
+
+.btn_down_arw {
+	background: url(//img.danawa.com/new/dalgi/img/btn_arw_down.gif) #383e4d
+		no-repeat center 8px;
+	width: 90px;
+	display: block;
+	border-top: 1px solid #272a34;
+	height: 30px;
+}
+
+/* pop_right_m */
+.pop_right_m {
+	background: #495164;
+	height: 361px;
+	border-top: 1px solid #4f5669;
+	border-bottom: 1px solid #4f5669;
+	text-align: left;
+	padding: 0;
+}
+
+.pop_right_m li {
+	color: #d1d6e2;
+	font-size: 11px;
+	cursor: pointer;
+	margin: 0 9px 0 11px;
+	line-height: 15px;
+	margin-top: 18px;
+	text-align: left;
+	padding: 0;
+	list-style: none;
+}
+
+.pop_right_m li:hover {
+	color: #fff600;
+	font-size: 11px;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.pop_right_m li.select {
+	color: #fff;
+	font-size: 11px;
+	cursor: pointer;
+}
+
+.pop_right_m * {
+	padding: 0;
+}
+
+/* layer_more_view */
+.layer_more_view {
+	position: relative;
+	z-index: 999;
+}
+
+.layer_more_in {
+	position: absolute;
+	width: 358px;
+	height: 272px;
+	border: 1px solid #888;
+	background: #fff;
+}
+
+.layer_more_in .pop_title {
+	background: #f8f8f8;
+	height: 48px;
+	overflow: hidden;
+	position: relative;
+	text-align: left;
+}
+
+.layer_more_in .pop_title span {
+	display: block;
+	color: #010101;
+	font-size: 13px;
+	font-weight: bold;
+	margin: 14px 0 0 19px;
+	font-family: "Malgun Gothic", Dotum, "돋움", "Apple SD Gothic Neo",
+		Helvetica, Sans-serif;
+}
+
+.more_list {
+	margin-top: 8px;
+}
+
+.more_list li {
+	height: 12px;
+	vertical-align: middle;
+	padding: 7px 0 7px 0;
+}
+
+.more_list li:hover {
+	background: #f4f4f4;
+	cursor: pointer;
+}
+
+.more_list .s_left {
+	float: left;
+	width: 100px;
+	padding-left: 20px;
+	overflow: hidden;
+	color: #0a5fee;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.more_list .s_right {
+	float: right;
+	width: 240px;
+	text-align: left;
+}
+
+.star_list {
+	width: 98px;
+	margin: 0 auto;
+	margin-top: 14px;
+}
+
+.star_list li {
+	vertical-align: middle;
+	padding: 7px 0 7px 0;
+	height: 12px;
+	list-style: none;
+}
+
+.more_list2 {
+	margin: -1px 10px 0 10px;
+}
+
+.more_list2 li {
+	border-bottom: 1px solid #d7d7d7;
+	padding: 11px 0 12px 9px;
+}
+
+.more_list2 li strong {
+	color: #0a5fee;
+}
+
+.more_list2 li a {
+	color: #616161;
+}
+
+.more_list2 li .bar {
+	color: #c0c0c0;
+	display: inline-block;
+	margin: 0 5px 0 5px;
+}
+
+.more_list2 li .title {
+	margin-bottom: 2px;
+}
+
+.more_list2 li.select {
+	background: #f9f9f9
+}
+
+.choice_list li:hover {
+	background: #f9f9f9
+}
+
+.scroll_2 {
+	height: 162px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	scrollbar-3dlight-color: #c5c5c5;
+	scrollbar-highlight-color: #fff;
+	scrollbar-face-color: #fff;
+	scrollbar-shadow-color: #fff;
+	scrollbar-darkshadow-color: #c5c5c5;
+	scrollbar-track-color: #ebebeb;
+	scrollbar-arrow-color: #7aa5ff;
+}
+
+.singo_textbox {
+	margin: 15px 0 0 20px;
+}
+
+.singo_textbox .textbox {
+	width: 290px;
+	height: 139px;
+	border: 1px solid #c2c2c2;
+}
+
+.top_banner_category {
+	padding-bottom: 10px;
+	height: 80px;
+	overflow: hidden;
+}
+
+.scroll_3 {
+	height: 162px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border: 1px solid #888;
+	scrollbar-3dlight-color: #c5c5c5;
+	scrollbar-highlight-color: #fff;
+	scrollbar-face-color: #fff;
+	scrollbar-shadow-color: #fff;
+	scrollbar-darkshadow-color: #c5c5c5;
+	scrollbar-track-color: #ebebeb;
+	scrollbar-arrow-color: #7aa5ff;
+}
+
+.arrow_gap {
+	padding: 8px 0 7px 0;
+	text-align: center;
+}
+
+.aCenter a {
+	color: #000 !important;
+}
+
+.cause {
+	color: #ff5513;
+	text-align: center;
+	padding: 33px 0 32px 0;
+}
+
+.aRight {
+	text-align: right;
+	margin-top: -34px;
+}
+
+.aRight a {
+	color: #000 !important;
+}
+
+/* textBtn 설정 */
+.myDictionaryBtn {
+	background-position: right -350px;
+}
+
+.myDictionaryBtn * {
+	background-position: 0 -350px;
+	margin-right: 2px;
+	height: 17px;
+	font-size: 12px;
+	color: #000;
+	cursor: pointer;
+	padding: 6px 10px 0 25px;
+	font-weight: bold;
+}
+
+/* 추가금 결재 추가 */
+.pop_add_pay {
+	position: absolute;
+	z-index: 100;
+}
+
+.pop_add_pay .info_box {
+	width: 319px;
+}
+
+.pop_add_pay .info_box .glossary {
+	float: none;
+	width: 315px;
+}
+
+.pop_add_pay .info_box .pop_title span {
+	margin-left: 15px;
+}
+
+.pop_add_pay .info_box .btn_close {
+	right: 12px;
+}
+
+.pop_add_pay .info_box .pop_con {
+	line-height: 18px;
+	padding: 12px 15px 11px;
+	color: #333;
+}
+
+/* 용어사전 새 팝업 */
+.top_wrap {
+	position: relative;;
+	width: 100%;
+	height: 44px;
+	border-bottom: 2px solid #111;
+}
+
+.top_wrap .top_title {
+	padding: 10px 0 0 24px;
+	color: #111;
+	font-weight: bold;
+	font-size: 18px;
+	font-family: "Malgun Gothic", Dotum, "돋움", "Apple SD Gothic Neo",
+		Helvetica, Sans-serif;
+	letter-spacing: -.05em;
+}
+
+.center_wrap {
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+.content_wrap {
+	margin: 12px;
+	height: 524px;
+	width: 752px;
+	zoom: 1;
+}
+
+.top_content_wrap {
+	position: relative;
+	z-index: 10;
+	width: 100%;
+}
+
+.tab_area {
+	clear: both;
+	overflow: hidden;
+	position: relative;
+}
+
+.tab_area li {
+	background-color: #424A5F;
+	float: left;
+	font-weight: bold;
+	height: 32px;
+	text-align: center;
+	width: 113px;
+	line-height: 31px;
+	border-bottom: 2px solid #73A2FF;
+}
+
+.tab_area li.tab_on {
+	border: 2px solid #73A2FF;
+	border-bottom: none;
+	height: 32px;
+	background-color: #ededed;
+}
+
+.tab_area a {
+	color: #fff;
+}
+
+.tab_area a.on {
+	color: #000000;
+}
+
+.search_area {
+	height: 20px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	vertical-align: middle;
+}
+
+.cate_search {
+	border: 1px solid #666666;
+	height: 20px;
+	margin-right: 5px;
+	padding: 1px;
+	width: 97px;
+	vertical-align: middle;
+}
+
+.search_area input.input_text {
+	height: 18px;
+	border: 1px solid #666666;
+	width: 97px;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+.search_area img.btn_search {
+	vertical-align: middle;
+}
+
+.bottom_content_wrap {
+	position: relative;
+	clear: both;
+	width: 100%;
+	height: 490px;
+}
+
+.left_content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 230px;
+	height: 490px;
+	background: #f6f8ff;
+}
+
+.left_list {
+	position: relative;
+	overflow: hidden;
+	overflow-y: auto;
+	width: 100%;
+	height: 458px;
+	padding: 16px 0;
+}
+
+.left_list li {
+	word-break: break-all;
+	padding: 4px 8px 4px 24px;
+	font-family: "Malgun Gothic", Dotum, "돋움", "Apple SD Gothic Neo",
+		Helvetica, Sans-serif;
+}
+
+.left_list a {
+	font-size: 13px;
+	color: #333;
+	font-family: "Malgun Gothic", Dotum, "돋움", "Apple SD Gothic Neo",
+		Helvetica, Sans-serif;
+}
+
+.left_list li.list_on a {
+	color: #2964e0;
+	font-weight: bold;
+}
+
+.left_input_area {
+	margin: 17px 12px;
+	width: 210px;
+	height: 354px;
+}
+
+.input_area {
+	font-weight: bold;
+	color: #000000;
+	font-size: 12px;
+	margin-bottom: 22px;
+}
+
+.input_area input {
+	height: 18px;
+	border: 1px solid #bfbfbf;
+	width: 136px;
+	vertical-align: middle;
+	margin-left: 18px;
+}
+
+.category_area {
+	color: #000000;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.category_area .cate_1_select {
+	margin-left: 7px;
+	border: 1px solid #bfbfbf;
+	padding: 1px;
+	height: 20px;
+	width: 136px;
+	margin-bottom: 11px;
+	vertical-align: -10%;
+}
+
+.category_area .cate_2_select {
+	margin-left: 7px;
+	border: 1px solid #bfbfbf;
+	padding: 1px;
+	height: 20px;
+	width: 136px;
+	margin-left: 64px;
+}
+
+.text_area {
+	margin-top: 31px;
+}
+
+.text_area img {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.text_area .title {
+	font-weight: bold;
+	color: #ff3600;
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+
+.text_area .content {
+	font-size: 11px;
+	color: #666666;
+	width: 185px;
+}
+
+.text_area .agree_check {
+	margin-top: 20px;
+}
+
+.text_area .agree_check label {
+	font-weight: bold;
+	color: #666666;
+	font-size: 11px;
+	margin-left: 5px;
+}
+
+.text_area .agree_text {
+	margin-left: 5px;
+	font-size: 11px;
+	font-weight: bold;
+	color: #666666;
+}
+
+.text_area .check {
+	vertical-align: -5%;
+}
+
+.btn_scroll_up {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	left: 160px;
+	top: 130px;
+	background: url("//img.danawa.com/new/dalgi/img/btn_scroll.png")
+		no-repeat scroll 0 -20px transparent;
+	z-index: 999;
+}
+
+.btn_scroll_down {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	left: 160px;
+	top: 313px;
+	background: url("//img.danawa.com/new/dalgi/img/btn_scroll.png")
+		no-repeat scroll 0 -74px transparent;
+	z-index: 999;
+}
+
+.center_content {
+	height: 490px;
+	margin-left: 230px;
+}
+
+.scroll_box_height {
+	height: 490px;
+}
+
+.right_content {
+	float: left;
+	height: 488px;
+	width: 133px;
+	border: 1px solid #3f4145;
+}
+
+.btn_left_right {
+	height: 30px;
+	background-color: #54575f;
+	border-bottom: 1px solid #3f4145;
+	padding-left: 12px;
+	line-height: 30px;
+}
+
+.arrow_title {
+	color: #fff;
+	font-weight: bold;
+	font-size: 11px;
+	margin-right: 15px;
+	display: block;
+	float: left;
+}
+
+.btn_left_arw {
+	background: url("//img.danawa.com/new/dalgi/img/ico_arrow_left2.gif")
+		no-repeat scroll 0px 10px transparent;
+	float: left;
+	display: block;
+	width: 10px;
+	height: 100%;
+	margin-right: 10px;
+}
+
+.btn_right_arw {
+	background: url("//img.danawa.com/new/dalgi/img/ico_arrow_right2.gif")
+		no-repeat scroll 0px 10px transparent;
+	float: left;
+	display: block;
+	width: 10px;
+	height: 100%;
+}
+
+.right_list_area {
+	background: none repeat scroll 0 0 #6a6f7b;
+	height: 457px;
+	text-align: left;
+}
+
+.right_list_area ul.right_list {
+	height: 437px;
+	position: relative;
+	overflow: hidden;
+	padding-top: 10px;
+}
+
+.right_list_area ul.right_list li {
+	line-height: 14px;
+	text-align: left;
+	margin: 0 11px 20px 13px;
+	word-break: break-all;
+}
+
+.right_list_area ul.right_list a {
+	color: #fff;
+	font-size: 11px;
+}
+
+.right_list_area ul.right_list a:hover {
+	color: #FFF600;
+	text-decoration: underline;
+}
+
+.right_list_area ul.right_list a.select {
+	color: #FFF600;
+	text-decoration: underline;
+}
+
+.bottom_wrap {
+	width: 100%;
+	height: 26px;
+	background-color: #939393;
+}
+
+.bottom_wrap a.close_btn img {
+	float: right;
+	margin: 9px 12px 0 0;
+}
+
+.scroll_text {
+	display: block;
+	text-indent: -999em;
+}
+
+/* button line-height */
+.lh12 {
+	line-height: 12px;
+}
+
+/* button 추가 */
+.btn_gray {
+	background: url(//img.danawa.com/new/dalgi/img/bg_btn_gray.gif) repeat-x
+		left top;
+	height: 17px;
+	color: #010101 !important;
+	font-weight: bold;
+	text-align: center;
+	display: inline-block;
+	padding-top: 6px;
+	vertical-align: middle;
+	border-left: 1px solid #bebebe;
+	border-right: 1px solid #bebebe;
+	width: 67px;
+}
+
+.btn_gray:hover {
+	color: #010101 !important;
+}
+
+.btn_gray:active {
+	color: #010101 !important;
+}
+
+.h424 .pop_right_m {
+	height: 424px;
+}
+
+/* 로그인화면, 검색결과화면 적용 css */
+.type1 .left_content {
+	width: 225px;
+	padding-right: 2px;
+}
+
+.type1 .top_content_wrap .tab_area .br_ff {
+	border-right: 1px solid #fff;
+}
+
+/* 내가 본 용어 화면 적용 css */
+.type2 .tab_area li.tab_on {
+	border: 1px solid #cccccc;
+	border-right: none;
+	border-bottom: none;
+}
+
+.type2 .tab_area li {
+	border-bottom: none;
+	width: 114px;
+}
+
+.type2 .left_content {
+	border-bottom: 1px solid #cccccc;
+	border-top: none;
+	border-left: none;
+	background: url("//img.danawa.com/new/dalgi/img/bg_left_area.gif")
+		repeat-y scroll 0 0 transparent;
+	width: 227px;
+	height: 489px;
+	padding-right: 2px;
+}
+
+.type2 .center_content {
+	border-left: 2px solid #73A2FF;
+	border-right: none;
+	width: 430px;
+}
+
+.type2 .right_content {
+	border: 2px solid #73A2FF;
+	border-left: none;
+}
+
+.type2 .btn_left_right {
+	border-left: 1px solid #3F4145;
+}
+
+.type2 .right_content {
+	height: 486px;
+}
+
+.type2 .right_list_area {
+	border-left: 1px solid #3F4145;
+	height: 455px;
+}
+
+.type2 .pop_con_right {
+	border: 2px solid #73A2FF;
+	border-left: none;
+}
+
+.type2 .h424 .pop_right_m {
+	height: 422px;
+}
+
+/* 용어등록 화면 적용 css */
+.type3 .tab_area li {
+	border-right: 1px solid #fff;
+}
+
+.type3 .tab_area li.tab_on {
+	margin-left: -1px;
+	background-color: #fff;
+	border-right: 2px solid #73A2FF;
+}
+
+.type3 .left_content {
+	width: 224px;
+	padding-right: 2px;
+}
+
+.type3 .center_content {
+	width: 431px;
+	overflow-y: auto;
+	position: relative;
+}
+
+.type3 .editer {
+	margin: 17px 5px;
+	_margin: 10px 0 10px 5px;
+}
+
+.type3 .regist_area {
+	width: 521px;
+}
+
+.pop_right_m a {
+	color: #D1D6E2;
+}
+
+.pop_right_m a:hover {
+	color: #fff600;
+}
+
+.pop_right_m a.select {
+	color: #fff600;
+}
+
+/* layer_v2 : 디자인 개편건 */
+.layer_v2 .glossary {
+	border: 1px solid #33383e;
+	background: #fff;
+	float: left;
+	width: 448px;
+}
+
+.layer_v2 .pop_con_right {
+	border: 1px solid #33383e;
+	border-left: 0;
+	float: left;
+	width: 98px;
+}
+
+.layer_v2 .pop_title {
+	background: #f8f8f8;
+	height: 48px;
+	overflow: hidden;
+	position: relative;
+	text-align: left;
+}
+
+.layer_v2 .pop_title span {
+	display: block;
+	color: #010101;
+	font-size: 13px;
+	font-weight: bold;
+	margin: 14px 0 0 19px;
+	font-family: "Malgun Gothic", Dotum, "돋움", "Apple SD Gothic Neo",
+		Helvetica, Sans-serif;
+}
+
+.layer_v2 .scroll_box {
+	max-height: 391px;
+	width: auto;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.layer_v2 .scroll_in {
+	margin: 5px 0 0 18px;
+	width: 400px;
+	overflow: hidden;
+	text-align: left;
+	line-height: 20px;
+	color: #333;
+}
+
+.layer_v2 .scroll_in p {
+	line-height: 20px;
+	color: #333;
+}
+
+.layer_v2 .scroll_in .s_tit {
+	color: #010101;
+	font-family: "Malgun Gothic", Dotum, "돋움", "Apple SD Gothic Neo",
+		Helvetica, Sans-serif !important;
+	font-size: 14px !important;
+}
+
+.layer_v2 .btn_pop_center {
+	margin-top: 19px;
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.btn_new {
+	display: inline-block;
+	height: 28px;
+	line-height: 26px !important;
+	padding: 0 12px;
+	font-weight: bold;
+	font-size: 13px !important;
+	font-family: "Malgun Gothic", Dotum, "돋움", "Apple SD Gothic Neo",
+		Helvetica, Sans-serif !important;
+	text-decoration: none !important;
+}
+
+.btn_new:hover {
+	text-decoration: none !important;
+}
+
+.btn_all {
+	background: #33383e;
+	color: #fff;
+	border: 1px solid #33383e;
+}
+
+.btn_all:hover {
+	color: #fff;
+}
+
+.btn_report {
+	border: 1px solid #b9bec4;
+	color: #33383e;
+	margin-left: 6px;
+}
+
+.layer_more_view .btn_new {
+	width: 52px;
+}
+
+.layer_more_view .btn_pop_center {
+	margin: 15px 0 20px;
+}
+
+.layer_v2 .layer_more_in {
+	top: 98px;
+	right: 50px;
+}
+
+.layer_v2 .btn_up_arw {
+	background: url(//img.danawa.com/new/dalgi/img/btn_arw_up_tmp.gif)
+		#e3e7e9 no-repeat center 20px;
+	width: 98px;
+	display: block;
+	height: 49px;
+	border: 0;
+} /* 실서버 적용시 _tmp 삭제 */
+.layer_v2 .btn_down_arw {
+	background: url(//img.danawa.com/new/dalgi/img/btn_arw_down_tmp.gif)
+		#e3e7e9 no-repeat center 20px;
+	width: 98px;
+	display: block;
+	height: 49px;
+	border: 0;
+} /* 실서버 적용시 _tmp 삭제 */
+.layer_v2 .pop_right_m {
+	background: #eef2f5;
+	height: 415px;
+	text-align: left;
+	padding: 0;
+	border: 0;
+}
+
+.layer_v2 .pop_right_m li {
+	color: #333;
+	font-size: 11px;
+	cursor: pointer;
+	margin: 0 9px 0 11px;
+	line-height: 15px;
+	padding: 18px 0 0 0;
+	text-align: left;
+	list-style: none;
+}
+
+.layer_v2 .pop_right_m li:hover {
+	font-size: 11px;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.layer_v2 .pop_right_m li.select {
+	font-size: 11px;
+	cursor: pointer;
+}
+
+.singo_textbox {
+	height: 142px;
+	margin: 15px 19px;
+}
+
+.singo_textbox .textbox {
+	width: 298px;
+	height: 120px;
+	padding: 10px;
+	border: 1px solid #dcdcdc;
+	resize: none;
+}
+
+/* popup_v2 : 디자인 개선 */
+.popup_v2 .top_search_area {
+	position: absolute;
+	top: 8px;
+	right: 10px;
+}
+
+.popup_v2 .top_search_area .txt {
+	float: left;
+	margin-right: 10px;
+	line-height: 28px;
+	font-size: 11px;
+	color: #919191;
+	letter-spacing: -0.02em;
+}
+
+.popup_v2 .top_search_area .input_text {
+	float: left;
+	display: inline-block;
+	width: 152px;
+	height: 26px;
+	padding: 0 10px;
+	border: 1px solid #33383e;
+	color: #333;
+	font-size: 13px;
+	font-weight: bold;
+	font-family: "Malgun Gothic", Dotum, "돋움", "Apple SD Gothic Neo",
+		Helvetica, Sans-serif;
+}
+
+.popup_v2 .top_search_area .btn_serch {
+	float: left;
+	display: inline-block;
+	width: 62px;
+	height: 28px;
+	line-height: 28px;
+	color: #fff;
+	background: #33383e;
+	font-size: 13px;
+	font-weight: bold;
+	font-family: "Malgun Gothic", Dotum, "돋움", "Apple SD Gothic Neo",
+		Helvetica, Sans-serif;
+	text-align: center;
+}
+
+.btn_serch:hover {
+	text-decoration: none;
+}
+
+.popup_v2 .content_wrap {
+	width: auto;
+	height: 490px;
+	margin: 0;
+}
+
+.popup_v2 .scroll_in {
+	height: 485px;
+	overflow: visible;
+	width: auto;
+	padding: 0 24px;
+	margin: 0;
+}
+
+.popup_v2 .btn_pop_center {
+	margin: 24px 0;
+}
+
+.pop_footer {
+	padding: 3px 8px 0;
+	height: 28px;
+	border-top: 1px solid #e5e5e5;
+}
+
+.pop_footer .foot_opt {
+	float: right;
+}
+
+.btn_pop_close {
+	border: none;
+	background: #fff;
+	font-weight: bold;
+	color: #333;
+	font-size: 12px;
+	height: 26px;
+	padding: 0 4px;
+	vertical-align: top;
+	cursor: pointer;
+}
+
+.pop_cls {
+	display: inline-block;
+	width: 9px;
+	height: 9px;
+	background: url(//img.danawa.com/img/common/popup_footer_close.gif)
+		no-repeat;
+}
+
+.popup_v2 .layer_more_in {
+	left: 260px;
+	top: 120px;
+}
+
+.popup_v2 .layer_more_view .btn_pop_center {
+	margin: 15px 0 20px
+}
+
+.popup_v2 .scroll_in div, .popup_v2 .scroll_in p, .popup_v2 .scroll_in a
+	{
+	font-family: Dotum, "돋움", "Apple SD Gothic Neo", Helvetica,
+		Sans-serif !important;
+	font-size: 12px !important;
+	color: #333 !important;
+	line-height: 20px !important;
+}
+
+.scroll_in a.btn_new {
+	display: inline-block;
+	height: 28px;
+	line-height: 26px !important;
+	padding: 0 12px;
+	font-weight: bold;
+	font-size: 13px !important;
+	font-family: "Malgun Gothic", Dotum, "돋움", "Apple SD Gothic Neo",
+		Helvetica, Sans-serif !important;
+	text-decoration: none !important;
+}
+
+.scroll_in a.btn_new:hover {
+	text-decoration: none !important;
+}
+
+.btn_dic_all {
+	display: inline-block;
+	width: 90px;
+	height: 23px;
+	line-height: 23px;
+	text-align: center;
+	font-size: 12px;
+	color: #666;
+	font-family: "Malgun Gothic", Dotum, "돋움", "Apple SD Gothic Neo",
+		Helvetica, Sans-serif;
+	border: 1px solid #bfbfbf;
+	background: #fff;
+	margin: 11px 0 0 20px;
+	letter-spacing: -.2px;
+}
+
+.btn_dic_all:hover {
+	text-decoration: none;
+	color: #666
+}
+
+.btn_dic_report {
+	position: absolute;
+	top: 27px;
+	right: 20px;
+	color: #666;
+	font-family: "Malgun Gothic", Dotum, "돋움", "Apple SD Gothic Neo",
+		Helvetica, Sans-serif;
+	letter-spacing: -.2px
+}
+
+.btn_dic_report:hover {
+	color: #666
+}
+
+.btn_dic_report:before {
+	content: "";
+	display: inline-block;
+	width: 12px;
+	height: 11px;
+	background: url(//img.danawa.com/img/prod/blog/bg_blog_210423.png)
+		-170px 0 no-repeat;
+	margin-right: 5px;
+	vertical-align: -1px;
+}
+
+.btn_prod_more {
+	background: #2964e0;
+	color: #fff;
+	padding: 0 18px;
+}
+
+.btn_prod_more:hover {
+	color: #fff
+}
