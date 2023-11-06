@@ -54,6 +54,7 @@ public class ProductController {
 		//1. cri안에있는 pagenum을 출력
 		log.info(cri);
 		List<ProductVO> list=service.selectProductListPaging(cri);
+		System.out.println("listttttttttttttt : " + list);
 		model.addAttribute("list", list);
 		log.info(list);
 		//PageMaker 객체 생성 : 

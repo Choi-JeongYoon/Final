@@ -11,9 +11,9 @@
 	<header>
 		<div class="head">
 			<div class="navi_box">
-				<ul>
+				<ul style="width: 100%;">
 					<c:forEach items="${list}" var="cate">
-						<li><a href="#">${cate.ptype1}</a>
+						<li ><a href="#">${cate.ptype1}</a>
 							<ul class="sub">
 								<c:forEach items="${cate.ptype2}" var="scate">
 									<li><a href="productList?ptype2=${scate.ptype2}">${scate.ptype2}</a></li>
@@ -271,7 +271,7 @@
 						<ul class="prod-list swiper-slide swiper-slide-active"
 							style="width: 865px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
 							<li class="prod-list__item"><a
-								href="productView?pnum=131"
+								href="productView?pnum=40"
 								class="prod-list__link top100ProductClick" target="_blank">
 									<span class="prod-list__thumb"><img
 										src="https://img.danawa.com/prod_img/500000/687/791/img/18791687_1.jpg?shrink=330:*&_v=20230705111010" alt="삼성전자 갤럭시S23 256GB, 자급제 (자급제,공기계)" aria-hidden="true"
