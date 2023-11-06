@@ -56,7 +56,8 @@
 			<a href="productNew"><button type="button" class="snip1535">상품
 					등록</button></a>
 		</c:if>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img class="topproducimg2"
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<img class="topproducimg2"
 			alt="전체 목록"
 			src="/resources/img/hamburger_menu_navbar_options_icon_196495.png"><a
 			href="productList"><button type="button" class="snip1535">전체
@@ -69,7 +70,7 @@
 
 	<table class="table table-sm table-bordered">
 		<tr>
-			<th>order</th>
+		
 			<th>제품번호</th>
 			<th>메인카테</th>
 			<th>서브카테</th>
@@ -85,7 +86,7 @@
 		</c:if>
 		<c:forEach items="${list}" var="product" varStatus="sts">
 			<tr>
-				<td>${sts.count}</td>
+			
 				<td><a
 					href="productView?pnum=${product.pnum}&pageNum=${pmaker.criteria.pageNum}&searchword=${pmaker.criteria.searchword}&searchtype=${pmaker.criteria.searchtype}">${product.pnum}</a></td>
 				<td>${product.ptype1}</td>
