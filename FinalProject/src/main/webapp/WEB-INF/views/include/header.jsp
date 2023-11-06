@@ -62,6 +62,8 @@
 <!-- 	href="/resources/css/produclist7.css" /> -->
 <!-- 	<link rel="stylesheet" type="text/css" -->
 <!-- 	href="/resources/css/produclist8.css" /> -->
+	<link rel="stylesheet" type="text/css"
+href="/resources/css/table.css" />
 
 <script src="/resources/js/jquery-3.6.3.min.js" type="text/javascript"></script>
 <script src="/resources/js/jQuery.js" type="text/javascript"></script>
@@ -104,156 +106,120 @@
 
 
 	<div class="main-header__search">
-<!-- 		<div class="search"> -->
-<!-- 			<form id="srchFRM_TOP" name="srchFRM_TOP" style="margin: 0px;" -->
-<!-- 				method="GET" action="//search.danawa.com/dsearch.php" -->
-<!-- 				data-gtm-form-interact-id="0"> -->
-<!-- 				<fieldset> -->
-					<legend class="blind">통합 검색</legend>
-					<!-- 					<div class="search__box search_area_content"> -->
-					<!-- 						<input type="text" class="search__input" name="k1" id="AKCSearch" -->
-					<!-- 							autocomplete="off" placeholder="검색어를 입력해주세요." title="검색어 입력" -->
-					<!-- 							value="" data-gtm-form-interact-field-id="0"> <input -->
-					<!-- 							id="module" name="module" value="goods" type="hidden"> <input -->
-					<!-- 							id="act" name="act" value="dispMain" type="hidden"> -->
-					<!-- 						<button type="submit" class="search__submit"> -->
-					<!-- 							<span class="blind">검색</span> -->
-					<!-- 						</button> -->
-					<!-- 					</div> -->
+		<!-- 		<div class="search"> -->
+		<!-- 			<form id="srchFRM_TOP" name="srchFRM_TOP" style="margin: 0px;" -->
+		<!-- 				method="GET" action="//search.danawa.com/dsearch.php" -->
+		<!-- 				data-gtm-form-interact-id="0"> -->
+		<!-- 				<fieldset> -->
+		<legend class="blind">통합 검색</legend>
+		<!-- 					<div class="search__box search_area_content"> -->
+		<!-- 						<input type="text" class="search__input" name="k1" id="AKCSearch" -->
+		<!-- 							autocomplete="off" placeholder="검색어를 입력해주세요." title="검색어 입력" -->
+		<!-- 							value="" data-gtm-form-interact-field-id="0"> <input -->
+		<!-- 							id="module" name="module" value="goods" type="hidden"> <input -->
+		<!-- 							id="act" name="act" value="dispMain" type="hidden"> -->
+		<!-- 						<button type="submit" class="search__submit"> -->
+		<!-- 							<span class="blind">검색</span> -->
+		<!-- 						</button> -->
+		<!-- 					</div> -->
 
-					<div class="search__box search_area_content">
-						<form action="productList" method="post">
-							<input type="text" size="20" name="searchword" id="searchword">
-							<button type="submit" class="search__submit"
-								onclick="return searchFun()">검 색</button>
-							&nbsp;
-						</form>
-					</div>
-
-
-<!-- 					<div style="display: none" id="searchBoxHidden"> -->
-<!-- 						<script type="text/javascript" -->
-<!-- 							src="//ad.danawa.com/RealMedia/ads/adstream_jx.ads/www.danawa.com/main@x50"></script> -->
-<!-- 					</div> -->
-					<!-- script type="text/javascript">
-						var adv_srch_type = null;
-						var adv_srch_obj = null;
-						var adv_srch_url = null;
-						$(function() {
-							new $("FORM#srchFRM_TOP")
-									.danawaSearchAutoComplete();
-
-							postscribe(
-									'#searchBoxHidden',
-									'<script type="text/javascript" src="//ad.danawa.com/RealMedia/ads/adstream_jx.ads/www.danawa.com/main@x50"><\/script>',
-									{
-										done : function() {
-											//먼저 생성된 자동완성 레이어 삭제
-											$("FORM#srchFRM_TOP").find(
-													'.auto_complete_area')
-													.remove();
-											//기존에 광고스크립트 내부에서 변수 전달하는 부분을 별도로 전달 (비동기로 호출하게 되면서 불가피한 부분)
-											window.parent
-													.postMessage([
-															adv_srch_type,
-															adv_srch_obj,
-															adv_srch_url ], '*');
-
-											new $("FORM#srchFRM_TOP")
-													.danawaSearchAutoComplete();
-										}
-									});
-
-						});
-						</script -->
-					<div id="auto_area2" class="auto_complete_area"
-						style="display: none;">
-						<div id="akcLayer" class="auto_word_list">
-							<ul style="display: none;"></ul>
-							<div id="mySearchKeywordBlockArea" style="display: block;">
-								<dl class="searched_keyword">
-									<dt>최근 검색어</dt>
-									<dd>
-										<ul id="mySearchKeywordListArea" class="searched_keyword_info">
-											<li id="mySearchKeyword_1" text="스마트워치"><a
-												href="//search.danawa.com/dsearch.php?k1=%EC%8A%A4%EB%A7%88%ED%8A%B8%EC%9B%8C%EC%B9%98">스마트워치</a>
-												<span class="etc"> <span class="date">10.19.</span> <input
-													type="button" id="deleteSearchKeyword_1"
-													class="btn btn_delete" title="검색한 키워드 삭제">
-											</span></li>
-										</ul>
-									</dd>
-								</dl>
-							</div>
-							<div id="switch_autocomplete" class="func_opt">
-								<a href="#" class="com_gnb keyword_all_delete">전체 삭제</a><a
-									href="#" class="com_gnb auto_function_switch">자동완성 끄기</a>
-							</div>
-						</div>
-						<div class="auto_product_list">
-							<ul id="auto_goods_list" class="auto_goods_list"
-								style="display: none;"></ul>
-							<ul id="auto_banner_layer" class="goods_banner">
-								<li><iframe width="300" height="250" marginheight="0"
-										marginwidth="0" title="자동완성 광고영역" scrolling="no"
-										frameborder="0"
-										src="//ad.danawa.com/RealMedia/ads/adstream_sx.ads/www.danawa.com/main@Top1"></iframe>
-								</li>
-							</ul>
-						</div>
-						<div></div>
-					</div>
-				</fieldset>
+		<div class="search__box search_area_content">
+			<form action="productList" method="post">
+				<input type="text" size="20" name="searchword" id="searchword"
+					style="width: 430px; height: 50px; font-size: 20px;"
+					data-gtm-form-interact-field-id="0">
+				<button type="submit" class="search__submit"
+					onclick="return searchFun()"></button>
+				&nbsp;
 			</form>
 		</div>
-	</div>
-	<div class="main-header__user">
-		<input type="hidden" id="browserCode"
-			value="02c06842-dd4b-454c-8cf5-7180dc2a9745"> <input
-			type="hidden" id="memberSeq" value="">
 
-		<div class="item">
-			<div class="layer__user-recent" role="dialog" aria-label="최근 본 상품"
-				style="display: none;">
-				<div class="user-recent">
-					<div class="user-recent__wrap" id="recentProduct"></div>
-					<div class="user-recent__wrap" id="recentCate"></div>
-					<div class="user-recent__wrap" id="buyingGuide"></div>
-					<button type="button" class="btn_close">
-						<span class="blind">최근 본 상품 닫기</span>
-					</button>
+		<div id="auto_area2" class="auto_complete_area" style="display: none;">
+			<div id="akcLayer" class="auto_word_list">
+				<ul style="display: none;"></ul>
+				<div id="mySearchKeywordBlockArea" style="display: block;">
+					<dl class="searched_keyword">
+						<dt>최근 검색어</dt>
+						<dd>
+							<ul id="mySearchKeywordListArea" class="searched_keyword_info">
+								<li id="mySearchKeyword_1" text="스마트워치"><a
+									href="//search.danawa.com/dsearch.php?k1=%EC%8A%A4%EB%A7%88%ED%8A%B8%EC%9B%8C%EC%B9%98">스마트워치</a>
+									<span class="etc"> <span class="date">10.19.</span> <input
+										type="button" id="deleteSearchKeyword_1"
+										class="btn btn_delete" title="검색한 키워드 삭제">
+								</span></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div id="switch_autocomplete" class="func_opt">
+					<a href="#" class="com_gnb keyword_all_delete">전체 삭제</a><a href="#"
+						class="com_gnb auto_function_switch">자동완성 끄기</a>
 				</div>
 			</div>
+			<div class="auto_product_list">
+				<ul id="auto_goods_list" class="auto_goods_list"
+					style="display: none;"></ul>
+				<ul id="auto_banner_layer" class="goods_banner">
+					<li><iframe width="300" height="250" marginheight="0"
+							marginwidth="0" title="자동완성 광고영역" scrolling="no" frameborder="0"
+							src="//ad.danawa.com/RealMedia/ads/adstream_sx.ads/www.danawa.com/main@Top1"></iframe>
+					</li>
+				</ul>
+			</div>
+			<div></div>
 		</div>
-		<div class="item">
-			<c:choose>
-				<c:when test="${sessionScope.name==null}">
-					<a href="login" role="button" class="btn_user btn_user--login">
-						<span class="txt">로그인</span>
-					</a>
-				</c:when>
-				<c:otherwise>
-					<a href="/" role="button" class="btn_user btn_user--login"> <span
-						class="txt">${sessionScope.name}</span><em class="lo_nim">님</em>
-					</a>
-				</c:otherwise>
-			</c:choose>
-		</div>
+		</fieldset>
+		</form>
+	</div>
+</div>
+<div class="main-header__user">
+	<input type="hidden" id="browserCode"
+		value="02c06842-dd4b-454c-8cf5-7180dc2a9745"> <input
+		type="hidden" id="memberSeq" value="">
 
-		<div class="layer__user-more" style="display: none;">
-			<ul class="more-list">
-				<c:choose>
-					<c:when test="${sessionScope.name==null}">
-						<li class="item_more"><a href="login" class="link_more">로그인</a></li>
-						<li class="item_more"><a href="register" class="link_more">회원가입</a></li>
-					</c:when>
-					<c:otherwise>
-						<li class="item_more"><a href="logout" class="link_more">로그아웃</a></li>
-					</c:otherwise>
-				</c:choose>
-				<li class="item_more"><a href="http://help.danawa.com"
-					class="link_more">고객센터</a></li>
-			</ul>
+	<div class="item">
+		<div class="layer__user-recent" role="dialog" aria-label="최근 본 상품"
+			style="display: none;">
+			<div class="user-recent">
+				<div class="user-recent__wrap" id="recentProduct"></div>
+				<div class="user-recent__wrap" id="recentCate"></div>
+				<div class="user-recent__wrap" id="buyingGuide"></div>
+				<button type="button" class="btn_close">
+					<span class="blind">최근 본 상품 닫기</span>
+				</button>
+			</div>
 		</div>
 	</div>
+	<div class="item">
+		<c:choose>
+			<c:when test="${sessionScope.name==null}">
+				<a href="login" role="button" class="btn_user btn_user--login">
+					<span class="txt">로그인</span>
+				</a>
+			</c:when>
+			<c:otherwise>
+				<a href="/" role="button" class="btn_user btn_user--login"> <span
+					class="txt">${sessionScope.name}</span><em class="lo_nim">님</em>
+				</a>
+			</c:otherwise>
+		</c:choose>
+	</div>
+
+	<div class="layer__user-more" style="display: none;">
+		<ul class="more-list">
+			<c:choose>
+				<c:when test="${sessionScope.name==null}">
+					<li class="item_more"><a href="login" class="link_more">로그인</a></li>
+					<li class="item_more"><a href="register" class="link_more">회원가입</a></li>
+				</c:when>
+				<c:otherwise>
+					<li class="item_more"><a href="logout" class="link_more">로그아웃</a></li>
+				</c:otherwise>
+			</c:choose>
+			<li class="item_more"><a href="http://help.danawa.com"
+				class="link_more">고객센터</a></li>
+		</ul>
+	</div>
+</div>
 </div>
