@@ -293,7 +293,7 @@
 								href="https://prod.danawa.com/info/?pcode=19627808"
 								class="prod-list__link top100ProductClick" target="_blank">
 									<span class="prod-list__thumb"><img
-										src="//img.danawa.com/prod_img/500000/808/627/img/19627808_1.jpg?shrink=130:130"
+										src="/resources/img/mainitem/19627808_1.avif"
 										alt="AMD 라이젠7-5세대 7800X3D (라파엘) (정품)" aria-hidden="true"
 										class="swiper-lazy swiper-lazy-loaded"></span> <span
 									class="prod-list__txt">AMD 라이젠7-5세대 7800X3D (라파엘) (정품)</span> <span
@@ -303,7 +303,7 @@
 								href="https://prod.danawa.com/info/?pcode=16742642"
 								class="prod-list__link top100ProductClick" target="_blank">
 									<span class="prod-list__thumb"><img
-										src="//img.danawa.com/prod_img/500000/642/742/img/16742642_1.jpg?shrink=130:130"
+										src="/resources/img/mainitem/16742642_1.webp"
 										alt="Microsoft Windows 11 Home (처음사용자용 한글)" aria-hidden="true"
 										class="swiper-lazy swiper-lazy-loaded"></span> <span
 									class="prod-list__txt">Microsoft Windows 11 Home (처음사용자용
@@ -314,27 +314,29 @@
 								href="https://prod.danawa.com/info/?pcode=13314890"
 								class="prod-list__link top100ProductClick" target="_blank">
 									<span class="prod-list__thumb"><img
-										src="//img.danawa.com/prod_img/500000/890/314/img/13314890_1.jpg?shrink=130:130"
+										src="/resources/img/mainitem/13314890_1.avif"
 										alt="제닉스 아레나-X 풋레스트 발받침 게이밍 의자" aria-hidden="true"
 										class="swiper-lazy swiper-lazy-loaded"></span> <span
 									class="prod-list__txt">제닉스 아레나-X 풋레스트 발받침 게이밍 의자</span> <span
 									class="prod-list__price"><span class="num">169,000</span>원</span>
 							</a></li>
+							
 							<li class="prod-list__item"><a
 								href="https://prod.danawa.com/info/?pcode=17641574"
 								class="prod-list__link top100ProductClick" target="_blank">
 									<span class="prod-list__thumb"><img
-										src="//img.danawa.com/prod_img/500000/574/641/img/17641574_1.jpg?shrink=130:130"
+										src="/resources/img/mainitem/17641574_1.webp"
 										alt="삼성전자 갤럭시 버즈2 프로 SM-R510 (정품)" aria-hidden="true"
 										class="swiper-lazy swiper-lazy-loaded"></span> <span
 									class="prod-list__txt">삼성전자 갤럭시 버즈2 프로 SM-R510 (정품)</span> <span
 									class="prod-list__price"><span class="num">146,940</span>원</span>
 							</a></li>
+							
 							<li class="prod-list__item"><a
 								href="https://prod.danawa.com/info/?pcode=20011487"
 								class="prod-list__link top100ProductClick" target="_blank">
 									<span class="prod-list__thumb"><img
-										src="//img.danawa.com/prod_img/500000/487/011/img/20011487_1.jpg?shrink=130:130"
+										src="/resources/img/mainitem/20011487_1.webp"
 										alt="파인디지털 파인뷰 X550 빌트인 와이파이 2채널 (32GB)" aria-hidden="true"
 										class="swiper-lazy swiper-lazy-loaded"></span> <span
 									class="prod-list__txt">파인디지털 파인뷰 X550 빌트인 와이파이 2채널
@@ -345,7 +347,7 @@
 								href="https://prod.danawa.com/info/?pcode=17747624"
 								class="prod-list__link top100ProductClick" target="_blank">
 									<span class="prod-list__thumb"><img
-										src="//img.danawa.com/prod_img/500000/624/747/img/17747624_1.jpg?shrink=130:130"
+										src="/resources/img/mainitem/17747624_1.avif"
 										alt="엔케이맥스 엔케이365 멀티비타민&amp;미네랄 120캡슐 (1개)" aria-hidden="true"
 										class="swiper-lazy swiper-lazy-loaded"></span> <span
 									class="prod-list__txt">엔케이맥스 엔케이365 멀티비타민&amp;미네랄 120캡슐
