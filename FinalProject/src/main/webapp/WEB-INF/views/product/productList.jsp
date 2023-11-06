@@ -64,7 +64,7 @@
 			<th>상품명</th>
 			<th>제조회사</th>
 			<th>상품설명</th>
-			<th>저장일자</th>
+			<th>등록일자</th>
 			
 		</tr>
 		<c:if test="${list==null}">
